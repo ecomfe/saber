@@ -27,82 +27,82 @@ nav: about
     <h3>小而美的JavaScript模块</h3>
     <p class="sub-text">拥抱开源社区，符合AMD规范，根据业务场景自由组合</p>
 
-    <a class="module">
+    <a class="module" href="https://github.com/ecomfe/saber-dom" target="_blank">
         <strong>saber-dom</strong>
         DOM处理模块。
     </a>
-    <a class="module">
-        <strong href="#" target="_blank">saber-emitter</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-emitter" target="_blank">
+        <strong>saber-emitter</strong>
         事件发射器。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-lang</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-lang" target="_blank">
+        <strong>saber-lang</strong>
         提供对象合并、继承、柯里化、函数绑定的语言增强模块。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-string</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-string" target="_blank">
+        <strong>saber-string</strong>
         字符串处理模块。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-env</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-env" target="_blank">
+        <strong>saber-env</strong>
         设备环境探测模块，基于Zepto detect部分代码构建。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-tap</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-tap" target="_blank">
+        <strong>saber-tap</strong>
         解决移动端点击延迟问题，基于FastClick项目创建。
     </a>
     
-    <a class="module">
-        <strong href="#" target="_blank">saber-promise</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-promise" target="_blank">
+        <strong>saber-promise</strong>
         Promise/A+实现，遵循1.1规范。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-touch</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-touch" target="_blank">
+        <strong>saber-touch</strong>
         手势模块，来自Clouda团队。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-ajax</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-ajax" target="_blank">
+        <strong>saber-ajax</strong>
         Promise风格的ajax封装，支持XMLHttpRequest2。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-run</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-run" target="_blank">
+        <strong>saber-run</strong>
         Promise风格的动画效果模块。
    </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-cookie</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-cookie" target="_blank">
+        <strong>saber-cookie</strong>
         Cookie操作模块。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-matchmedia</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-matchmedia" target="_blank">
+        <strong>saber-matchmedia</strong>
         判断Media Queries或监听其变化的模块。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-router</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-router" target="_blank">
+        <strong>saber-router</strong>
         hash路由控制模块。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-viewport</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-viewport" target="_blank">
+        <strong>saber-viewport</strong>
         页面视口管理模块，提供页面转场功能。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-scroll</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-scroll" target="_blank">
+        <strong>saber-scroll</strong>
         提供区域滚动功能。
     </a>
 
-    <a class="module">
-        <strong href="#" target="_blank">saber-firework</strong>
+    <a class="module" href="https://github.com/ecomfe/saber-firework" target="_blank">
+        <strong>saber-firework</strong>
         简单MVP模式实现。
     </a>
 </section>
