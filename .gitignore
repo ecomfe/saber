@@ -6,3 +6,4 @@ db.json
 .idea/
 .DS_Store
 .log
+.deploy
