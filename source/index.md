@@ -17,13 +17,18 @@ nav: about
             <li>项目管理、包管理、代码检测、调试、构建等工具（edp）</li>
             <li>基于最佳实践快速构建应用的脚手架工具（edpx-mobile）</li>
         </ul>
-        <p><a class="btn" href="#">入门教程</a><a class="btn" href="#">获取模块</a></p>
+        <p>
+            <!--
+            <a class="btn" href="#">入门教程</a>
+            -->
+            <a class="btn" href="#modules">获取模块</a></p>
         <div class="demo"></div>
     </div>
 
 </section>
 
 <section class="package">
+    <a name="modules"></a>
     <h3>小而美的JavaScript模块</h3>
     <p class="sub-text">拥抱开源社区，符合AMD规范，根据业务场景自由组合</p>
 
