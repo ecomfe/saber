@@ -1,9 +1,15 @@
 {
-    "name": "saber",
-    "version": "0.0.1",
-    "maintainers": "Firede <firede@firede.us>",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/ecomfe/saber"
+  "name": "saber",
+  "version": "2.3.0",
+  "maintainers": "Firede <firede@firede.us>",
+  "contributors": [
+    {
+      "name": "treelite",
+      "email": "c.xinle@gmail.com"
     }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ecomfe/saber"
+  }
 }

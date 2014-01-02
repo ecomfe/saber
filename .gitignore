@@ -1,5 +1,7 @@
+public
 node_modules/
 dep/
+*.swp
 .idea/
 .DS_Store
 .log

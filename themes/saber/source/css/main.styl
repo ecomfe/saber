@@ -1,0 +1,160 @@
+@import 'nib'
+
+global-reset()
+
+center()
+    width: 960px
+    margin: 0 auto
+
+body
+    font-family: Lato
+    color: #333
+    font-size: 14px
+    line-height: 1.5
+a
+    text-decoration: none
+
+header
+    position: relative
+    center()
+
+    h1
+        font-family: Abel
+        color: #1D5378
+        font-size: 25px
+
+    nav
+        absolute: bottom right 
+        font-size: 12px
+
+        a
+            font-weight: bold
+            margin-left: 25px
+            margin-right: 10px
+            color: #545454
+
+            &.cur
+                color: #398FC5
+
+.forkme
+    fixed: top 40px right -40px
+    height: 30px
+    width: 193px
+    text-align: center
+    background: url(img/forkme-bg.png) 0 0 repeat-x
+    line-height: @height
+    transform:rotate(45deg)
+    box-shadow: 0 0 5px #666
+
+    a
+        color: #FFF
+        text-shadow: 0 0 3px #333
+
+.intro
+    height: 500px
+    background: url(img/intro-bg.png) 0 0 repeat-x
+    .slogan
+        center()
+        height: 200px
+
+        h2
+            color: #FFF
+            margin: 0
+            padding-top: 65px
+            font-family: Abel
+            font-size: 36px
+            font-weight: normal
+
+        p
+            color: #B3D3E8
+
+    .feature
+        position: relative
+        center()
+        height: 300px
+
+        .title
+            margin: 0
+            padding-top: 40px
+            color: #FFF
+
+        ul
+            margin: 20px 0 40px
+            color: #B3D3E8
+
+        .btn
+            display: inline-block
+            margin-right: 20px
+            width: 100px
+            height: 36px
+            line-height: @height
+            text-align: center
+            font-size: 16px
+            border: 1px solid #FFF
+            border-radius: 3px
+            color: #FFF
+
+            &:hover
+                background: #FFF
+                color: #65A8DE
+
+        .demo
+            absolute: bottom right
+            height: 480px
+            width: 320px
+            background: url(img/demo.png) 0 0 no-repeat
+            border: 10px solid rgba(0, 0, 0, 0.3)
+
+.package
+    center()
+    margin-top: 80px
+    padding-bottom: 70px
+    border-bottom: 1px solid #CCC
+    clearfix()
+
+    h3
+        font-size: 32px
+        color: #333
+        margin: 0
+        text-align: center
+        font-weight: normal
+
+    p.sub-text
+        text-align: center
+        font-size: 16px
+        color: #888
+        margin-bottom: 50px
+
+    .module
+        float: left
+        padding: 10px
+        width: 198px
+        height: 58px
+        margin: 10px
+        background: #EDF0F1
+        font-size: 12px
+        border: 1px solid #EDF0F1
+        cursor: pointer
+
+        strong
+            display: block
+            color: #398FC5
+            margin-bottom: 5px
+            font-size: 14px
+
+        &:hover
+            background: #FFF
+
+    .preview
+        float: left
+        margin: 0 10px
+
+footer
+    background: #ECF0F1
+    height: 100px
+    line-height: @height
+    color: #7A7B7C
+    text-align: center
+
+    a
+        color: #7A7B7C
