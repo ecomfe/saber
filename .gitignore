@@ -1,6 +1,7 @@
 public
 node_modules/
 dep/
+db.json
 *.swp
 .idea/
 .DS_Store
