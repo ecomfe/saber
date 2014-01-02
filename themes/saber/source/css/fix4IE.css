@@ -4,6 +4,7 @@
     height: 137px;
     width: 137px;
     background: url(img/forkme.png) 0 0 no-repeat;
+    overflow: hidden;
 }
 
 .forkme a {
@@ -13,6 +14,5 @@
 }
 
 .intro .feature .demo {
-    border: none;
-    overflow: hidden;
+    border: 10px solid #367898;
 }
