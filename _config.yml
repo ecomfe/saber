@@ -81,4 +81,5 @@ exclude_generator:
 ## Docs: http://zespia.tw/hexo/docs/deploy.html
 deploy:
   type: github
-  repository: https://github.com/ecomfe/saber.git
+  repository: git@github.com:ecomfe/saber.git
+  branch: gh-pages
