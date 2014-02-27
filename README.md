@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ecomfe/saber.png?label=ready&title=Ready)](https://waffle.io/ecomfe/saber)
 # Saber Web
 
 使用[hexo](https://github.com/tommy351/hexo)搭建
