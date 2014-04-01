@@ -13,7 +13,7 @@ nav: about
         <p class="title">我们为您提供：</p>
         <ul>
             <li>16+个符合AMD规范的JavaScript模块</li>
-            <li>基于Stylus与Autoprefixer的样式框架（archer）</li>
+            <li>基于Stylus与Autoprefixer的样式框架（rider）</li>
             <li>项目管理、包管理、代码检测、调试、构建等工具（edp）</li>
             <li>基于最佳实践快速构建应用的脚手架工具（edpx-mobile）</li>
         </ul>
@@ -66,9 +66,9 @@ nav: about
         Promise/A+实现，遵循1.1规范。
     </a>
 
-    <a class="module" href="https://github.com/ecomfe/saber-touch" target="_blank">
-        <strong>saber-touch</strong>
-        手势模块，来自Clouda团队。
+    <a class="module" href="https://github.com/ecomfe/saber-uri" target="_blank">
+        <strong>saber-uri</strong>
+        URI处理模块。
     </a>
 
     <a class="module" href="https://github.com/ecomfe/saber-ajax" target="_blank">
@@ -79,7 +79,7 @@ nav: about
     <a class="module" href="https://github.com/ecomfe/saber-run" target="_blank">
         <strong>saber-run</strong>
         Promise风格的动画效果模块。
-   </a>
+    </a>
 
     <a class="module" href="https://github.com/ecomfe/saber-cookie" target="_blank">
         <strong>saber-cookie</strong>
