@@ -1,4 +1,4 @@
-# Saber Project
+# Saber Project [![Stories in Ready](https://badge.waffle.io/ecomfe/saber.png?label=ready&title=Ready)](https://waffle.io/ecomfe/saber)
 
 ![Saber](https://cloud.githubusercontent.com/assets/157338/2575503/00865afe-b954-11e3-8ef3-02d427227e63.png)
 
