@@ -39,26 +39,26 @@
 + 抛开桌面浏览器的历史包袱，只为移动端设计，优先使用原生 `JavaScript`
 + 拥抱社区，受益于 `AMD` 规范，有众多可用的模块资源
 
-模块名 | 模块说明 | 文档
---- | --- | ---
-[saber-ajax](https://github.com/ecomfe/saber-ajax) | Promise 风格的 Ajax 模块 | [文档](https://github.com/ecomfe/saber-ajax/blob/master/README.md)
-[saber-cookie](https://github.com/ecomfe/saber-cookie) | Cookie 操作模块 | [文档](https://github.com/ecomfe/saber-cookie/blob/master/README.md)
-[saber-dom](https://github.com/ecomfe/saber-dom) | 静态函数风格的 DOM 工具库 | [文档](https://github.com/ecomfe/saber-dom/blob/master/README.md)
-[saber-emitter](https://github.com/ecomfe/saber-emitter) | 事件发射器 | [文档](https://github.com/ecomfe/saber-emitter/blob/master/README.md)
-[saber-env](https://github.com/ecomfe/saber-env) | 浏览器环境检测 | [文档](https://github.com/ecomfe/saber-env/blob/master/README.md)
-[saber-firework](https://github.com/ecomfe/saber-firework) | MVP 开发框架，提供完整的 SPA 解决方案 | [文档](https://github.com/ecomfe/saber-firework/blob/master/README.md)
-[saber-geo](https://github.com/ecomfe/saber-geo) | 地理位置信息 | [文档](https://github.com/ecomfe/saber-geo/blob/master/README.md)
-[saber-lang](https://github.com/ecomfe/saber-lang) | 语言增强模块，包含 `extend`、`inherits`、`aspect` 等支持 | [文档](https://github.com/ecomfe/saber-lang/blob/master/README.md)
-[saber-matchmedia](https://github.com/ecomfe/saber-matchmedia) | 监测 CSS 的 media queries | [文档](https://github.com/ecomfe/saber-matchmedia/blob/master/README.md)
-[saber-promise](https://github.com/ecomfe/saber-promise) | Promise/A+ 实现 | [文档](https://github.com/ecomfe/saber-promise/blob/master/README.md)
-[saber-router](https://github.com/ecomfe/saber-router) | hash 路由控制模块 | [文档](https://github.com/ecomfe/saber-router/blob/master/README.md)
-[saber-run](https://github.com/ecomfe/saber-run) | 动画支持模块 | [文档](https://github.com/ecomfe/saber-run/blob/master/README.md)
-[saber-scroll](https://github.com/ecomfe/saber-scroll) | 区域滚动支持模块 | [文档](https://github.com/ecomfe/saber-scroll/blob/master/README.md)
-[saber-storage](https://github.com/ecomfe/saber-storage) | 本地存储模块 | [文档](https://github.com/ecomfe/saber-storage/blob/master/README.md)
-[saber-tap](https://github.com/ecomfe/saber-tap) | 浏览器无延迟点击支持模块 | [文档](https://github.com/ecomfe/saber-tap/blob/master/README.md)
-[saber-uri](https://github.com/ecomfe/saber-uri) | URI 处理模块 | [文档](https://github.com/ecomfe/saber-uri/blob/master/README.md)
-[saber-viewport](https://github.com/ecomfe/saber-viewport) | 页面视口管理，提供页面转场功能 | [文档](https://github.com/ecomfe/saber-viewport/blob/master/README.md)
-[hammer](https://github.com/ecomfe/dep-hammer) | 外部模块，移动端手势库 | [文档](https://github.com/EightMedia/hammer.js/wiki)
+模块名 | 模块说明 | 版本 | 文档
+--- | --- | --- | ---
+[saber-ajax](https://github.com/ecomfe/saber-ajax) | Promise 风格的 Ajax 模块 | 0.1.3 | [文档](https://github.com/ecomfe/saber-ajax/blob/master/README.md)
+[saber-cookie](https://github.com/ecomfe/saber-cookie) | Cookie 操作模块 | 0.1.3 | [文档](https://github.com/ecomfe/saber-cookie/blob/master/README.md)
+[saber-dom](https://github.com/ecomfe/saber-dom) | 静态函数风格的 DOM 工具库 | 0.4.0 | [文档](https://github.com/ecomfe/saber-dom/blob/master/README.md)
+[saber-emitter](https://github.com/ecomfe/saber-emitter) | 事件发射器 | 0.5.0 | [文档](https://github.com/ecomfe/saber-emitter/blob/master/README.md)
+[saber-env](https://github.com/ecomfe/saber-env) | 浏览器环境检测 | 0.4.2 | [文档](https://github.com/ecomfe/saber-env/blob/master/README.md)
+[saber-firework](https://github.com/ecomfe/saber-firework) | MVP 开发框架，提供完整的 SPA 解决方案 | 0.2.6 | [文档](https://github.com/ecomfe/saber-firework/blob/master/README.md)
+[saber-geo](https://github.com/ecomfe/saber-geo) | 地理位置信息 | 0.1.0 | [文档](https://github.com/ecomfe/saber-geo/blob/master/README.md)
+[saber-lang](https://github.com/ecomfe/saber-lang) | 语言增强模块，包含 `extend`、`inherits`、`aspect` 等支持 | 0.3.1 | [文档](https://github.com/ecomfe/saber-lang/blob/master/README.md)
+[saber-matchmedia](https://github.com/ecomfe/saber-matchmedia) | 监测 CSS 的 media queries | 0.1.0 | [文档](https://github.com/ecomfe/saber-matchmedia/blob/master/README.md)
+[saber-promise](https://github.com/ecomfe/saber-promise) | Promise/A+ 实现 | 0.1.2 | [文档](https://github.com/ecomfe/saber-promise/blob/master/README.md)
+[saber-router](https://github.com/ecomfe/saber-router) | hash 路由控制模块 | 0.2.1 | [文档](https://github.com/ecomfe/saber-router/blob/master/README.md)
+[saber-run](https://github.com/ecomfe/saber-run) | 动画支持模块 | 0.2.0 | [文档](https://github.com/ecomfe/saber-run/blob/master/README.md)
+[saber-scroll](https://github.com/ecomfe/saber-scroll) | 区域滚动支持模块 | 0.1.2 | [文档](https://github.com/ecomfe/saber-scroll/blob/master/README.md)
+[saber-storage](https://github.com/ecomfe/saber-storage) | 本地存储模块 | 0.1.0 | [文档](https://github.com/ecomfe/saber-storage/blob/master/README.md)
+[saber-tap](https://github.com/ecomfe/saber-tap) | 浏览器无延迟点击支持模块 | 0.1.2 | [文档](https://github.com/ecomfe/saber-tap/blob/master/README.md)
+[saber-uri](https://github.com/ecomfe/saber-uri) | URI 处理模块 | 0.1.1 | [文档](https://github.com/ecomfe/saber-uri/blob/master/README.md)
+[saber-viewport](https://github.com/ecomfe/saber-viewport) | 页面视口管理，提供页面转场功能 | 0.2.9 | [文档](https://github.com/ecomfe/saber-viewport/blob/master/README.md)
+[hammer](https://github.com/ecomfe/dep-hammer) | 外部模块，移动端手势库 | 1.0.10 | [文档](https://github.com/EightMedia/hammer.js/wiki)
 
 <!-- [saber-ui](https://github.com/ecomfe/saber-ui) | UI 库 | [文档](https://github.com/ecomfe/saber-ui/blob/master/README.md) -->
 
