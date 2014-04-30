@@ -6,12 +6,12 @@
 
 现在，她最擅长做 **移动端 SPA** (Single Page App) 项目。
 
-+ [一分钟入门](/ecomfe/saber/wiki/Getting-Started)
-+ [使用教程](/ecomfe/saber/wiki/Tutorial)
-    + [安装](/ecomfe/saber/wiki/Tutorial#installation)
-    + [开始一个项目](/ecomfe/saber/wiki/Tutorial#starting-project)
-    + [开发调试](/ecomfe/saber/wiki/Tutorial#development-and-debuging)
-    + [构建项目](/ecomfe/saber/wiki/Tutorial#building-it-out)
++ [一分钟入门](https://github.com/ecomfe/saber/wiki/Getting-Started)
++ [使用教程](https://github.com/ecomfe/saber/wiki/Tutorial)
+    + [安装](https://github.com/ecomfe/saber/wiki/Tutorial#installation)
+    + [开始一个项目](https://github.com/ecomfe/saber/wiki/Tutorial#starting-project)
+    + [开发调试](https://github.com/ecomfe/saber/wiki/Tutorial#development-and-debuging)
+    + [构建项目](https://github.com/ecomfe/saber/wiki/Tutorial#building-it-out)
 + [演示](#showcase)
 + [JavaScript 模块](#javascript-modules)
 + [CSS 样式库](#css-library)
@@ -99,5 +99,5 @@
 
 **Saber** 的 **平台工具**（[`edpx-mobile`](https://github.com/ecomfe/edpx-mobile)）是对 `edp` 功能的补充。
 
-首次运行 `edp mobile` 开头的命令即会自动安装 `edpx-mobile`，用法请参考 [使用教程](/ecomfe/saber/wiki/Tutorial)。
+首次运行 `edp mobile` 开头的命令即会自动安装 `edpx-mobile`，用法请参考 [使用教程](https://github.com/ecomfe/saber/wiki/Tutorial)。
 
