@@ -24,6 +24,8 @@
 
 访问地址：http://startupnews.duapp.com
 
+源码地址：https://github.com/ecomfe/saber-showcase
+
 二维码：
 
 ![二维码](https://cloud.githubusercontent.com/assets/157338/2837732/3088e110-d022-11e3-81cb-507f61683ba7.png)
