@@ -1,0 +1,69 @@
+header
+    background: #38519a
+    color: #fff
+    a,
+    a:hover
+        color: #fff
+
+.topbar
+    .logo
+        font-family: 'Roboto Condensed', sans-serif
+        font-weight: 400
+
+    // phone
+    +below(3)
+        .logo
+            font-size: 26px
+            line-height: 44px
+            text-align: center
+        .menu
+            font-size: 14px
+            text-align: center
+            padding: 10px _
+            background: rgba(#fff,.2)
+            li
+                display: inline-block
+                .active
+                    color: rgba(#fff,.5)
+                    font-weight: 700
+                &:not(:last-child):after
+                    content: ' \b7 '
+                    color: rgba(#fff,.2)
+
+    // tablet & desktop
+    +above(4)
+        margin: 0 auto
+        clearfix()
+
+        .logo
+            float: left
+            padding-left: 20px
+            font-size: 30px
+            line-height: 60px
+        .menu
+            ul
+                float: right
+                margin-right: 12px
+            li
+                float: left
+            a
+                position: relative
+                display: block
+                padding: 0 12px
+                line-height: 60px
+                transition: background 300ms easing('in-quart')
+                &:hover
+                    transition: background 300ms easing('out-quart')
+                    background: rgba(#fff,.2)
+                &.active:after
+                    content: ''
+                    absolute: _ _ 0 calc(50%\-6px)
+                    triangle: top 6px #fff
+
+    // tablet
+    +at(4)
+        width: $-tablet-width
+
+    // desktop
+    +above(5)
+        width: $-desktop-width

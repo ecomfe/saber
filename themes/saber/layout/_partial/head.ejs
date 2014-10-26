@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <%
+    var title = page.title;
+
+    if (is_archive()) {
+        title = '归档';
+
+        if (is_month()) {
+            title += ': ' + page.year + '/' + page.month;
+        }
+        else if (is_year()) {
+            title += ': ' + page.year;
+        }
+    }
+    else if (is_category()) {
+        title = '分类: ' + page.category;
+    }
+    else if (is_tag()) {
+        title = '标签: ' + page.tag;
+    }
+    %>
+    <% if (is_home()) { %>
+    <title><%= config.title%> | <%= config.subtitle %></title>
+    <% } else { %>
+    <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+    <% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <% if (theme.rss) { %><link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml"><% } %>
+    <% if (theme.favicon) { %><link rel="icon" href="<%- theme.favicon %>"><% } %>
+    <%- css('css/master') %>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement('script');
+        hm.src = '//hm.baidu.com/hm.js?a12dc3a09e80cd9a547dcefbce88b88d';
+        var s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>

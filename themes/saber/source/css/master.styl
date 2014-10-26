@@ -1,0 +1,54 @@
+// Variables
+$-tablet-width = 800px
+$-desktop-width = 1050px
+
+// Fonts
+@font-face
+    font-family: 'Roboto'
+    font-style: normal
+    font-weight: 400
+    src: url('../font/Roboto-Regular.woff') format('woff'), url('../font/Roboto-Regular.ttf') format('truetype')
+
+@font-face
+    font-family: 'Roboto'
+    font-style: normal
+    font-weight: 700
+    src: url('../font/Roboto-Bold.woff') format('woff'), url('../font/Roboto-Bold.ttf') format('truetype')
+
+@font-face
+    font-family: 'Roboto'
+    font-style: italic
+    font-weight: 400
+    src: url('../font/Roboto-Italic.woff') format('woff'), url('../font/Roboto-Italic.ttf') format('truetype')
+
+@font-face
+    font-family: 'Roboto Condensed'
+    font-style: normal
+    font-weight: 400
+    src: url('../font/RobotoCondensed-Regular.woff') format('woff'), url('../font/RobotoCondensed-Regular.ttf') format('truetype')
+
+// Init
+initialize()
+
+body
+    font-family: Roboto, sans-serif
+
+a
+    color: #50608f
+    text-decoration: none
+    &:hover
+        color: lighten(#50608f,20)
+
+// Main
+main
+    margin: 0 auto
+    +at(4)
+        width: $-tablet-width
+    +above(5)
+        width: $-desktop-width
+
+// Modules
+@require 'header'
+@require 'footer'
+
+@require 'home'

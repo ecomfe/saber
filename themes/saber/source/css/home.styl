@@ -1,0 +1,191 @@
+.intro
+    padding: 70px _ 65px
+    font-size: 17px
+    text-align: center
+    color: #9b9b9b
+
+    h2
+        font-size: 30px
+        padding-bottom: 15px
+        color: #50608f
+
+    +below(3)
+        display: none
+
+.features
+    margin: 0 auto
+    text-align: right
+    padding: 25px 0
+    clearfix()
+
+    // 手机上，整体宽度限制在 320px
+    +below(3)
+        width: 320px
+
+    +above(4)
+        border-top: 1px solid #efefef
+
+    .feature
+        float: left
+        padding: 20px 0
+        box-sizing: border-box
+        .title
+            font-size: 18px
+        .desc
+            font-size: 14px
+            line-height: 1.6em
+            color: #9b9b9b
+
+        // phone
+        +below(3)
+            position: relative
+            padding-left: 110px
+            width: 100%
+            text-align: left
+            .icon
+                size: 100px
+                absolute: 10px _ _ 5px
+            .title
+                padding-top: 10px
+            .desc
+                padding: 8px 0
+                font-size: 13px
+
+        // tablet
+        +at(4)
+            position: relative
+            padding-left: 150px
+            width: floor($-tablet-width/2)
+            text-align: left
+            .icon
+                size: 120px
+                absolute: 10px _ _ 10px
+            .title
+                padding-top: 20px
+            .desc
+                padding: 10px 0
+
+
+        // desktop
+        +above(5)
+            text-align: center
+            width: floor($-desktop-width/4)
+            .icon
+                size: 130px
+            .desc
+                padding: 10px 0
+
+    // 更多特性
+    .more
+        clear: both
+        display: inline-block
+        padding: 10px
+        margin: 0 10px
+        font-size: 14px
+        &:after
+            content: ' \bb'
+
+.showcase
+    padding: 25px
+    border-top: 1px solid #efefef
+    h2
+        clear: both
+        text-align: center
+        color: #50608f
+    ul
+        margin: 35px auto
+        clearfix()
+    li
+        float: left
+        line-height: 0
+        text-align: center
+        box-sizing: border-box
+        a
+            display: inline-block
+            size: 140px 50px
+            background-repeat: none
+            bg: '../img/showcase-logo.png' auto auto 1
+            hide-text()
+
+    +above(4)
+        h2
+            font-size: 30px
+            margin: 35px auto
+        li
+            border: 1px solid #efefef
+            margin: 5px
+            padding: 5px
+            width: 240px
+
+        // logos
+        .baidu-baozhang a
+            background-position: -150px 0
+        .baidu-jiankang a
+            background-position: -300px 0
+        .baidu-jiaoyu a
+            background-position: -450px 0
+        .baidu-koubei a
+            background-position: -600px 0
+        .baidu-qiao a
+            background-position: 0 -50px
+        .baidu-weigou a
+            background-position: -150px -50px
+        .baidu-duzhan a
+            width: 220px
+            background-position: -300px -50px
+
+    +below(3)
+        padding: 20px 10px
+        h2
+            font-size: 24px
+            margin: 25px auto
+        ul
+            width: 300px
+        li
+            width: 50%
+            padding: 5px
+            a
+                bg: '../img/showcase-logo.png'
+                size: 70px 25px
+        // logos
+        .baidu-baozhang a
+            background-position: -75px 0
+        .baidu-jiankang a
+            background-position: -150px 0
+        .baidu-jiaoyu a
+            background-position: -225px 0
+        .baidu-koubei a
+            background-position: -300px 0
+        .baidu-qiao a
+            background-position: 0 -25px
+        .baidu-weigou a
+            background-position: -75px -25px
+        .baidu-duzhan a
+            width: 110px
+            background-position: -150px -25px
+
+// 其它开源项目
+.any-other
+    padding: 25px
+    font-size: 13px
+    color: #4a4a4a
+    line-height: 1.6em
+    border-top: 1px solid #efefef
+
+    p
+        margin: 10px _
+        em
+            font-weight: 700
+
+    dl
+        clearfix()
+
+    dt
+        font-weight: 700
+        float: left
+        clear: left
+        width: 60px
+    dd
+        float: left
+        clear: right
+

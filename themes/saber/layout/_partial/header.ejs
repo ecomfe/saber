@@ -1,0 +1,15 @@
+<header>
+    <div class="topbar">
+        <h1 class="logo"><a href="<%- url_for('') %>">saber</a></h1>
+        <nav class="menu">
+            <ul>
+                <% for (var i in theme.menu) { %>
+                <li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+                <% } %>
+                <% if (theme.github) { %>
+                <li><a href="<%= theme.github %>" target="_blank">GitHub</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>
