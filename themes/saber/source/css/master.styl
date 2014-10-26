@@ -1,6 +1,4 @@
-// Variables
-$-tablet-width = 800px
-$-desktop-width = 1050px
+@require '_variable'
 
 // Fonts
 @font-face
@@ -48,7 +46,7 @@ main
         width: $-desktop-width
 
 // Modules
-@require 'header'
-@require 'footer'
+@require '_header'
+@require '_footer'
 
-@require 'home'
+@require '_home'
