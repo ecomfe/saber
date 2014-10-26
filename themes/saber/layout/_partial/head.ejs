@@ -23,7 +23,7 @@
     }
     %>
     <% if (is_home()) { %>
-    <title><%= config.title%> | <%= config.subtitle %></title>
+    <title><%= config.title%> - <%= config.subtitle %></title>
     <% } else { %>
     <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
     <% } %>
@@ -39,7 +39,7 @@
     (function() {
         var hm = document.createElement('script');
         hm.src = '//hm.baidu.com/hm.js?a12dc3a09e80cd9a547dcefbce88b88d';
-        var s = document.getElementsByTagName('script')[0]; 
+        var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(hm, s);
     })();
     </script>

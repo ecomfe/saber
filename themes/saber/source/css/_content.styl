@@ -1,0 +1,52 @@
+// Rider UI Core
+//
+// @desc    内容块
+// @author  firede(firede@firede.us)
+
+
+// mixins
+// ================
+
+ui-content($ui-font-size = 16px, $ui-line-height = 26px, $ui-heading-ratio = (2.75 2.25 1.75 1.25 1 0.85))
+    // base
+    h1, h2, h3, h4, h5, h6,
+    strong
+        font-weight: 700
+    em
+        font-style: italic
+    code
+        font-family: monospace
+    pre
+        overflow-x: auto
+
+    // vertical rhythm
+    font-size: rem($ui-font-size)
+    line-height: rem($ui-line-height)
+
+    // set heading font-size
+    $ui-heading-length = length($ui-heading-ratio)
+    for $ui-cur in (1..$ui-heading-length)
+        $ui-cur-ratio = $ui-heading-ratio[$ui-cur - 1]
+        $ui-cur-size = $ui-cur-ratio * $ui-font-size
+        h{$ui-cur}
+            font-size: rem($ui-cur-size)
+            line-height: rem(ceil($ui-font-size * $ui-cur-ratio / $ui-line-height) * $ui-line-height)
+
+    h1, h2, h3, h4, h5, h6
+        margin: rem($ui-line-height / 2) _
+
+    // list
+    ul, ol
+        margin: rem($ui-line-height / 2) 0 rem($ui-line-height / 2) rem(25)
+    ul
+        list-style-type: disc
+    ol
+        list-style-type: decimal
+    ul ul,
+    ul ol,
+    ol ol,
+    ol ul
+        margin: 0 _
+
+    p, blockquote
+        margin: rem($ui-line-height / 2) _

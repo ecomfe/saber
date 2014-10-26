@@ -4,7 +4,19 @@
         <nav class="menu">
             <ul>
                 <% for (var i in theme.menu) { %>
-                <li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+                <%
+                var curItemValue = theme.menu[i];
+                var isActive = false;
+
+
+                if (path.indexOf(curItemValue) === 0) {
+                    isActive = true;
+                }
+                if (!path && !curItemValue) {
+                    isActive = true;
+                }
+                %>
+                <li><a href="<%- url_for(theme.menu[i]) %>"<% if (isActive) { %> class="active"<% } %>><%= i %></a></li>
                 <% } %>
                 <% if (theme.github) { %>
                 <li><a href="<%= theme.github %>" target="_blank">GitHub</a></li>

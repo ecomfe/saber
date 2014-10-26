@@ -83,6 +83,8 @@ disqus_shortname:
 theme: saber
 exclude_generator:
 
+duoshuo_shortname: saberjs
+
 rider:
   compress: true
   autoprefixer:

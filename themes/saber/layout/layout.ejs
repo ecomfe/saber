@@ -1,10 +1,7 @@
 <%- partial('_partial/head') %>
-    <body>
+    <body class="<%= page.layout || 'home' %>">
         <%- partial('_partial/header') %>
-        <main>
-            <%- body %>
-            <%- partial('_partial/comment') %>
-        </main>
+        <%- body %>
         <%- partial('_partial/footer') %>
         <%- partial('_partial/before-body') %>
     </body>

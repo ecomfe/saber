@@ -1,10 +1,10 @@
 # Header
 menu:
-  首页: /
-  特性: /feature
-  文档: /doc
-  下载: /download
-  关于: /about
+  首页:
+  特性: feature
+  文档: doc
+  下载: download
+  关于: about
 
 rss: /saber/atom.xml
 favicon: /saber/favicon.png

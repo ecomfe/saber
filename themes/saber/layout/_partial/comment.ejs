@@ -1,5 +1,7 @@
 <% if (config.duoshuo_shortname) { %>
-<div class="ds-thread" data-thread-key="<%= page.path %>" data-title="<%= title %>" data-url="<%= page.permalink %>"></div>
+<section class="comments">
+    <div class="ds-thread" data-thread-key="<%= page.path || 'saber' %>" data-title="<%= page.title || config.title %>" data-url="<%= config.url + '/' + path %>"></div>
+</section>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:'<%= config.duoshuo_shortname %>'};
 (function() {
@@ -8,7 +10,7 @@ var duoshuoQuery = {short_name:'<%= config.duoshuo_shortname %>'};
     ds.async = true;
     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
     ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
+    (document.getElementsByTagName('head')[0]
      || document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
 </script>
