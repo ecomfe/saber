@@ -1,4 +1,4 @@
-<% if (config.duoshuo_shortname) { %>
+<% if (config.duoshuo_shortname && page.comments) { %>
 <section class="comments">
     <div class="ds-thread" data-thread-key="<%= page.path || 'saber' %>" data-title="<%= page.title || config.title %>" data-url="<%= config.url + '/' + path %>"></div>
 </section>
