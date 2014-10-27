@@ -1,5 +1,6 @@
 title: 特性
 date: 2014-10-26 23:12:42
+comments: false
 ---
 
 ## 为移动设计
