@@ -5,6 +5,6 @@
   "dependencies": {
     "hexo-renderer-ejs": "*",
     "hexo-renderer-marked": "*",
-    "hexo-renderer-rider": "^0.1.0"
+    "hexo-renderer-rider": "0.1.3"
   }
 }
