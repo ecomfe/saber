@@ -1,6 +1,8 @@
-date: 2014-9-31 1:18:44
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:44:42
+repo: saber-router
+ref: 0.1.0-beta.4
 ---
 
 # saber-router

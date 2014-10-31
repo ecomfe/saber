@@ -1,6 +1,8 @@
-date: 2014-9-31 1:17:28
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:42:3
+repo: saber-cookie
+ref: 0.1.0
 ---
 
 # saber-cookie

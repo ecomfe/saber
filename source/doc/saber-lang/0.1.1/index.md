@@ -1,6 +1,8 @@
-date: 2014-9-30 13:49:3
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:44:6
+repo: saber-lang
+ref: 0.1.1
 ---
 
 # saber-lang

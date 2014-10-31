@@ -1,6 +1,8 @@
-date: 2014-9-31 1:18:38
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:44:36
+repo: saber-router
+ref: 0.2.4
 ---
 
 # saber-router [![Build Status](https://travis-ci.org/ecomfe/saber-router.svg)](https://travis-ci.org/ecomfe/saber-router)

@@ -1,7 +1,9 @@
-title: saber-emitter
-date: 2014-9-30 13:47:53
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:43:36
+title: saber-emitter
+repo: saber-emitter
+ref: 0.2.0
 ---
 
 一个适用于移动端的事件发射器。

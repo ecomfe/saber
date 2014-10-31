@@ -1,6 +1,8 @@
-date: 2014-9-31 1:17:22
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:41:57
+repo: saber-cookie
+ref: 0.1.5
 ---
 
 # saber-cookie [![Build Status](https://travis-ci.org/ecomfe/saber-cookie.png)](https://travis-ci.org/ecomfe/saber-cookie)

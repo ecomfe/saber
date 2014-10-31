@@ -1,7 +1,9 @@
-title: saber-dom
-date: 2014-9-30 13:46:47
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:43:7
+title: saber-dom
+repo: saber-dom
+ref: 0.2.0
 ---
 
 一个适用于移动端，静态函数风格的DOM工具库。

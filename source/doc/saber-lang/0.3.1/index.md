@@ -1,7 +1,9 @@
-title: saber-lang
-date: 2014-9-30 13:49:0
-layout: page
+layout: doc
 comments: false
+date: 2014-9-31 2:44:3
+title: saber-lang
+repo: saber-lang
+ref: 0.3.1
 ---
 
 适合移动端的 **语言增强** 模块。
