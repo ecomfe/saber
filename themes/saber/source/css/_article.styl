@@ -3,8 +3,9 @@
 
 // 为 article 提供排版支持
 article
+    padding: 20px 0
 
-    $-heading-rato = (2.4 1.75 1.5 1.25 1 0.85)
+    $-heading-rato = (2.25 1.75 1.5 1.25 1 0.85)
 
     +above(4)
         ui-content(16px, 26px, $-heading-rato)
@@ -17,12 +18,6 @@ article
     img
         max-width: 100%
 
-    h1
-        padding: 15px _
-        color: #50608f
-        background: #f7f7f7
-        text-align: center
-
     h2
         border-bottom: 1px solid #efefef
 
@@ -33,6 +28,9 @@ article
 
     .highlight
         border-radius: 5px
+
+    .article-title
+        color: #50608f
 
 .comments
     padding: 10px _
