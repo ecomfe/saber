@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-2 5:35:51
+date: 2014-10-2 10:37:34
 repo: saber-firework
 ref: 0.2.5
 ---
@@ -24,7 +24,7 @@ firework.load({
 firework.start();
 ```
 
-参考[使用指南](doc/guid.html)
+参考[使用指南](doc/guide.html)
 
 ## API
 
@@ -32,14 +32,14 @@ firework.start();
 
 加载路由配置信息
 
-* `route` `{Object|Array.<Object>}` 路由配置信息，具体参考[doc/route](doc/rout.html)
+* `route` `{Object|Array.<Object>}` 路由配置信息，具体参考[doc/route](doc/route.html)
 
 ### .start(ele, options)
 
 启动App
 
 * `ele ` `{HTMLElement}` 容器元素
-* `options` `{Object}` 全局配置信息，具体参考[doc/config](doc/confi.html)
+* `options` `{Object}` 全局配置信息，具体参考[doc/config](doc/config.html)
 
 ===
 
