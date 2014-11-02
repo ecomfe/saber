@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    
+    <title>特性 | saber</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="alternative" href="/saber/atom.xml" title="saber" type="application/atom+xml">
+    <link rel="icon" href="/saber/favicon.png">
+    <link rel="stylesheet" href="/saber/css/master.css" type="text/css">
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement('script');
+        hm.src = '//hm.baidu.com/hm.js?a12dc3a09e80cd9a547dcefbce88b88d';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+
+    <body class="page">
+        <header>
+    <div class="topbar">
+        <h1 class="logo"><a href="/saber/">saber</a></h1>
+        <nav class="menu">
+            <ul>
+                
+                
+                <li><a href="/saber/">首页</a></li>
+                
+                
+                <li><a href="/saber/feature" class="active">特性</a></li>
+                
+                
+                <li><a href="/saber/doc">文档</a></li>
+                
+                
+                <li><a href="/saber/download">下载</a></li>
+                
+                
+                <li><a href="https://github.com/ecomfe/saber" target="_blank">GitHub</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+        <main>
+    <article>
+    
+    <h1 class="article-title">特性</h1>
+    
+
+    <h2 id="为移动设计">为移动设计</h2>
+<p>面向移动场景的精简设计，有选择的提供 API，抛开桌面浏览器的历史包袱。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 我们不提供 `each` 方法。</span></div><div class="line"><span class="comment">// 因为移动场景对标准的支持较好，直接使用 JavaScript API 是最佳选择：</span></div><div class="line"><span class="keyword">var</span> members = [<span class="string">'firede'</span>, <span class="string">'treelite'</span>, <span class="string">'redmed'</span>, <span class="string">'zfkun'</span>, <span class="string">'junmer'</span>];</div><div class="line">members.every(callbackFn...);</div><div class="line">members.some(callbackFn...);</div><div class="line">members.forEach(callbackFn...);</div><div class="line">members.map(callbackFn...);</div><div class="line">members.filter(callbackFn...);</div><div class="line"></div><div class="line"><span class="comment">// `Function.prototype.bind` 在 `iOS 5` 与 `PhantomJS` 中不支持。</span></div><div class="line"><span class="comment">// 为了向下兼容、单元测试，我们提供了 `bind` 方法：</span></div><div class="line">lang.bind(fn, thisArg, ...args);</div></pre></td></tr></table></figure>
+
+<h2 id="细粒度模块">细粒度模块</h2>
+<p>遵循 AMD 规范，每个模块目标明确，功能专一。</p>
+<p>我们为您准备了众多常用模块，供您根据需求，自由组合使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入所需的模块</span></div><div class="line"><span class="keyword">var</span> ajax = <span class="built_in">require</span>(<span class="string">'saber-ajax'</span>);</div><div class="line"><span class="keyword">var</span> format = <span class="built_in">require</span>(<span class="string">'saber-string/format'</span>);</div><div class="line"></div><div class="line">ajax.get(url).then(</div><div class="line">    <span class="comment">// success</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>{</div><div class="line">        <span class="comment">// 格式化字符串</span></div><div class="line">        <span class="keyword">var</span> greeting = format(<span class="string">'Hello, ${name}!'</span>, data);</div><div class="line">        showGreeting(greeting);</div><div class="line">    },</div><div class="line">    <span class="comment">// failure</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="params">(err)</span> </span>{</div><div class="line">        showError(err);</div><div class="line">    }</div><div class="line">);</div></pre></td></tr></table></figure>
+
+<p>当然，您也可以轻松引入其它符合 AMD 标准的第三方模块。</p>
+<h2 id="单页面应用">单页面应用</h2>
+<p>在移动场景下，单页面应用 (SPA) 能够获得更流畅的操作体验。</p>
+<p>我们提供的 MVP 框架 <code>saber-firework</code>，采用 <a href="http://ecomfe.github.io/etpl" target="_blank" rel="external">ETPL</a> 做为模板引擎，结合页面转场与路由管理，提供完整的 SPA 解决方案。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> firework = <span class="built_in">require</span>(<span class="string">'saber-firework'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加载 index 配置</span></div><div class="line">firework.load({</div><div class="line">    path: <span class="string">'/index'</span>,</div><div class="line">    action: <span class="built_in">require</span>(<span class="string">'./index'</span>)</div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">// 启动应用</span></div><div class="line">firework.start();</div></pre></td></tr></table></figure>
+
+<h2 id="样式工具库">样式工具库</h2>
+<p>我们提供了一个基于 <code>Stylus</code> 的样式工具库：<code>rider</code>。</p>
+<p>它提供了 样式初始化、顺时针简写、缓动函数、图片、排版、单位转换、形状、动画、响应式工具 等功能，可以让你的前端样式开发更轻松、更省心。</p>
+<p>它的特点是：</p>
+<ul>
+<li>用 <code>Autoprefixer</code> 处理多数兼容性问题，面向 <em>标准 CSS</em> 开发</li>
+<li>只在调用时才输出 CSS 代码，避免 <em>样式类</em> 污染 <em>HTML</em> 的语义</li>
+<li>以 <code>npm package</code> 的形式管理版本，升级方便</li>
+</ul>
+<p>对于设计风格规律、需要快速开发的项目，我们还提供了一套 UI 样式库 <code>rider-ui</code>。</p>
+<h2 id="轻量级组件库">轻量级组件库</h2>
+<p><code>saber-widget</code> 是为移动场景设计的轻量级组件库，旨在解决业务中较复杂的通用需求。</p>
+<p>它提供了核心的 <em>组件机制</em> 与部分 <em>通用组件</em> (如：LazyLoad、Slider、ImageView、Suggestion、RadioBox 等)。它的 <em>组件机制</em> 提供了 <em>生命周期</em>、<em>事件管理</em>、<em>状态管理</em> 的模式，为复杂业务控件的开发提供了范本。</p>
+<p>在实际业务中，同样的组件，在样式、功能上也可能存在细微差别。因为 <code>saber-widget</code> 没有对 <code>className</code> 的强耦合，并且拥有 <code>Widget</code> 的插件机制，能够在一定程度上应对这种变化。</p>
+<p>相比其它 UI 组件库，<code>saber-widget</code> 并没有将 <code>button</code> 之类的基础元素列入组件范围。因为在业务快速发展的环境下，我们认为此类元素直接操作会是更好的实践，比做成组件更简单、更灵活。</p>
+<h2 id="项目样板与脚手架">项目样板与脚手架</h2>
+<p>针对最常见的 SPA 项目，我们提供了项目样板 (boilerplate) 与脚手架 (scaffold) 工具。</p>
+<p>通过项目样板，您只需要一个命令，即可下载依赖模块、生成基础项目结构与文件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 初始化 SPA 项目</span></div><div class="line">$ edpm init spa</div></pre></td></tr></table></figure>
+
+<p>通过脚手架，您可以快速为当前项目添加模块，并更新相关配置：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 注册 `/list` 路由，并添加对应的 Action、Model、View、Template 文件</span></div><div class="line">$ edpm add /list</div></pre></td></tr></table></figure>
+
+<h2 id="高度工程化">高度工程化</h2>
+<p>受益于企业级前端应用开发平台 <a href="https://github.com/ecomfe/edp" target="_blank" rel="external">EDP</a>，它为项目管理、包管理、调试、构建、代码生成、代码检测、单元测试等各个环节提供解决方案，具备完善的工程化支持。</p>
+<p><img src="https://cloud.githubusercontent.com/assets/157338/4702265/65c04392-5861-11e4-86db-f0be73d3b5f5.png" alt="EDP"></p>
+<p>我们为 EDP 增加了 Watch、LiveReload、HTML2JS、Stylus 支持、Weinre 支持等功能，使其与 Saber 无缝对接。</p>
+
+</article>
+
+    
+
+</main>
+
+        <footer>
+    <p>&copy;2014 <a href="http://efe.baidu.com" target="_blank">Baidu EFE</a>.</p>
+</footer>
+
+        <script src="/saber/js/master.js" type="text/javascript"></script>
+
+
+    </body>
+</html>
