@@ -13,10 +13,26 @@
         .repos
             font-size: 16px
             box-sizing: border-box
-            border: 1px solid #f7f7f7
+            border-radius: 5px
 
             > li
                 line-height: 1.5em
                 padding: 3px 10px
-                background: #f7f7f7
+                background: lighten(#38519a,90%)
                 margin: 1px
+                border-radius: 5px
+                color: #50608f
+
+        .versions
+            font-size: 14px
+            margin: 0 -7px
+
+            > li
+                border-radius: 3px
+                background: lighten(#38519a,97%)
+                margin: 1px
+                line-height: 1.5em
+                padding: 2px 17px
+            > li.active
+                font-weight: 700
+                color: lighten(#38519a,50%)

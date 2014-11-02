@@ -1,8 +1,19 @@
-<main class="doc">
+<script>
+var DOC_DATA = <% include ../../../docs.json %>;
+</script>
+
+<main class="doc" data-repo="<%= page.repo %>" data-version="<%= page.ref %>">
     <aside>
         <ul class="repos">
             <li>saber-ajax</li>
-            <li>saber-dom</li>
+            <li class="active">
+                saber-dom
+                <ul class="versions">
+                    <li class="active">0.4.0</li>
+                    <li>0.3.0</li>
+                    <li>0.2.0</li>
+                </ul>
+            </li>
             <li>saber-emitter</li>
             <li>saber-matchmedia</li>
         </ul>
