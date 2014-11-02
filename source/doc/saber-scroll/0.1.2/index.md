@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-9-31 2:59:36
+date: 2014-10-2 5:36:27
 repo: saber-scroll
 ref: 0.1.2
 ---
@@ -117,8 +117,8 @@ var scroller = scroll(
 
 目前支持以下插件：
 
-* [scrollbar](doc/plugin/scrollbar.md) 为滚动区域添加滚动条
-* [overflowHint](doc/plugin/overflowHint.md) 提供到达或者超出滚动范围的提示样式
+* [scrollbar](doc/plugin/scrollba.html) 为滚动区域添加滚动条
+* [overflowHint](doc/plugin/overflowHin.html) 提供到达或者超出滚动范围的提示样式
 
 ===
 

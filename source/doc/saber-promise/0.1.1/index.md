@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-9-31 2:58:20
+date: 2014-10-2 5:36:14
 repo: saber-promise
 ref: 0.1.1
 ---

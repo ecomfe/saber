@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-9-31 3:3:7
+date: 2014-10-2 5:37:23
 repo: saber-widget
 ref: 0.3.1
 ---
@@ -27,23 +27,23 @@ edp import saber-widget
 
 ## API
 
-* [主模块 main](./doc/api-main.md)
+* [主模块 main](./doc/api-mai.html)
 
 ### 控件
 
-* [基类 Widget](./doc/api-widget.md)
-* [懒加载 LazyLoad](./doc/api-widget-lazyload.md)
-* [轮播图 Slider](./doc/api-widget-slider.md)
-* [图片查看器 ImageView](./doc/api-widget-imageview.md)
-* [搜索建议 Suggestion](./doc/api-widget-suggestion.md)
-* [单选组 RadioGroup](./doc/api-widget-radiogroup.md)
+* [基类 Widget](./doc/api-widge.html)
+* [懒加载 LazyLoad](./doc/api-widget-lazyloa.html)
+* [轮播图 Slider](./doc/api-widget-slide.html)
+* [图片查看器 ImageView](./doc/api-widget-imagevie.html)
+* [搜索建议 Suggestion](./doc/api-widget-suggestio.html)
+* [单选组 RadioGroup](./doc/api-widget-radiogrou.html)
 
 ### 插件
 
-* [基类 Plugin](./doc/api-plugin.md)
-* [翻转自适应(轮播图) SliderFlex](./doc/api-plugin-sliderflex.md)
-* [翻转自适应(图片查看器) ImageViewFlex](./doc/api-plugin-imageviewflex.md)
-* [遮罩 Masker](./doc/api-plugin-masker.md)
+* [基类 Plugin](./doc/api-plugi.html)
+* [翻转自适应(轮播图) SliderFlex](./doc/api-plugin-sliderfle.html)
+* [翻转自适应(图片查看器) ImageViewFlex](./doc/api-plugin-imageviewfle.html)
+* [遮罩 Masker](./doc/api-plugin-maske.html)
 
 ===
 

@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-9-31 2:48:22
+date: 2014-10-2 5:35:5
 title: rider
 repo: rider
 ref: 0.4.3
@@ -13,8 +13,8 @@ ref: 0.4.3
 
 + 安装与配置
     + [在 `edp` 环境使用](https://github.com/ecomfe/edp-provider-rider)
-    + [在 `connect`/`express` 环境使用](./doc/connect.md)
-+ [API](./doc/api.md)
-+ [代码风格](./doc/code-style.md)
-+ [常见问题](./doc/faq.md)
-+ [DEMO与单元测试](./doc/demo-and-ut.md)
+    + [在 `connect`/`express` 环境使用](./doc/connec.html)
++ [API](./doc/ap.html)
++ [代码风格](./doc/code-styl.html)
++ [常见问题](./doc/fa.html)
++ [DEMO与单元测试](./doc/demo-and-u.html)
