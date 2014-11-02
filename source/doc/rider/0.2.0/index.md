@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-2 5:35:21
+date: 2014-10-2 10:37:5
 title: rider
 repo: rider
 ref: 0.2.0

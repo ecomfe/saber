@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-2 5:37:33
+date: 2014-10-2 10:39:16
 repo: saber-widget
 ref: 0.2.1
 ---
@@ -24,22 +24,22 @@ edp import saber-widget
 
 ## API
 
-* [主模块 main](./doc/api-mai.html)
+* [主模块 main](./doc/api-main.html)
 
 ### 控件
 
-* [基类 Widget](./doc/api-widge.html)
-* [懒加载 LazyLoad](./doc/api-widget-lazyloa.html)
-* [轮播图 Slider](./doc/api-widget-slide.html)
-* [图片查看器 ImageView](./doc/api-widget-imagevie.html)
-* [搜索建议 Suggestion](./doc/api-widget-suggestio.html)
+* [基类 Widget](./doc/api-widget.html)
+* [懒加载 LazyLoad](./doc/api-widget-lazyload.html)
+* [轮播图 Slider](./doc/api-widget-slider.html)
+* [图片查看器 ImageView](./doc/api-widget-imageview.html)
+* [搜索建议 Suggestion](./doc/api-widget-suggestion.html)
 
 ### 插件
 
-* [基类 Plugin](./doc/api-plugi.html)
-* [翻转自适应(轮播图) SliderFlex](./doc/api-plugin-sliderfle.html)
-* [遮罩 Masker](./doc/api-plugin-maske.html)
-* [缩放 Zoom](./doc/api-plugin-zoo.html)
+* [基类 Plugin](./doc/api-plugin.html)
+* [翻转自适应(轮播图) SliderFlex](./doc/api-plugin-sliderflex.html)
+* [遮罩 Masker](./doc/api-plugin-masker.html)
+* [缩放 Zoom](./doc/api-plugin-zoom.html)
 
 ===
 

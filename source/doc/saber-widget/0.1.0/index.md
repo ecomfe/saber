@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-2 5:37:40
+date: 2014-10-2 10:39:23
 repo: saber-widget
 ref: 0.1.0
 ---
@@ -24,9 +24,9 @@ edp import saber-widget
 
 ## API
 
-* [主模块 main](./doc/api-mai.html)
-* [基类 Widget](./doc/api-widge.html)
-* [轮播图 Slider](./doc/api-slide.html)
+* [主模块 main](./doc/api-main.html)
+* [基类 Widget](./doc/api-widget.html)
+* [轮播图 Slider](./doc/api-slider.html)
 
 
 ===
