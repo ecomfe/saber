@@ -6,7 +6,7 @@ menu:
   下载: download
   # 关于: about
 
-rss: /saber/atom.xml
+# rss: /saber/atom.xml
 favicon: /saber/favicon.png
 github: https://github.com/ecomfe/saber
 
