@@ -57,7 +57,6 @@ tag: 2
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
 port: 8000
-server_ip: localhost
 logger: false
 logger_format: dev
 
@@ -96,4 +95,7 @@ rider:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: github
+  repository: git@github.com:ecomfe/saber.git
+  branch: gh-pages
+
