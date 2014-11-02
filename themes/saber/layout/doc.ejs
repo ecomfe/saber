@@ -2,7 +2,7 @@
 window.DOC_DATA = <% include ../../../docs.json %>;
 </script>
 
-<main class="doc">
+<main>
     <aside id="doc-menu" data-repo="<%= page.repo || '' %>" data-version="<%= page.ref || '' %>"></aside>
     <%- partial('_partial/article', {post: page, index: false}) %>
     <%- partial('_partial/comment') %>

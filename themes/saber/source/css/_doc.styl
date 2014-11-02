@@ -1,5 +1,50 @@
 .doc
-    +above(4)
+    .repos
+        font-size: 16px
+        box-sizing: border-box
+        border-radius: 5px
+
+        > li
+            line-height: 1.5em
+            padding: 3px 10px
+            background: lighten(#38519a,90%)
+            margin: 1px
+            border-radius: 5px
+
+            &.active
+                background: lighten(#38519a,90%)
+                > a
+                    font-weight: 700
+                .versions
+                    display: block
+
+    .versions
+        font-size: 14px
+        margin: 0 -7px
+        display: none
+        padding-top: 5px
+        border-top: 1px solid lighten(#38519a,85%)
+
+        > li
+            border-radius: 3px
+            margin: 1px
+            line-height: 1.5em
+            padding: 2px 17px
+        > li.active
+            background: #fff
+            font-weight: 700
+
+    +below(3)
+        main
+            display: flex
+            flex-direction: column-reverse
+        article
+            flex: 1
+        aside
+            flex: 1
+            margin: 10px
+
+    +above(5)
         clearfix()
 
         article
@@ -7,42 +52,21 @@
 
         aside
             float: left
-            margin: 25px 0
+            margin: 10px 0
             width: 180px
 
+        .versions > li.active
+            margin-right: -6px
+            border-radius: 3px 0 0 3px
+
+    +at(4)
+        article
+            margin-left: 165px
+
+        aside
+            float: left
+            margin: 10px 0
+            width: 150px
+
         .repos
-            font-size: 16px
-            box-sizing: border-box
-            border-radius: 5px
-
-            > li
-                line-height: 1.5em
-                padding: 3px 10px
-                background: lighten(#38519a,90%)
-                margin: 1px
-                border-radius: 5px
-
-                &.active
-                    background: lighten(#38519a,90%)
-                    > a
-                        font-weight: 700
-                    .versions
-                        display: block
-
-        .versions
             font-size: 14px
-            margin: 0 -7px
-            display: none
-            padding-top: 5px
-            border-top: 1px solid lighten(#38519a,85%)
-
-            > li
-                border-radius: 3px
-                margin: 1px
-                line-height: 1.5em
-                padding: 2px 17px
-            > li.active
-                background: #fff
-                font-weight: 700
-                margin-right: -6px
-                border-radius: 3px 0 0 3px
