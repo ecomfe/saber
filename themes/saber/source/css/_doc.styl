@@ -21,18 +21,28 @@
                 background: lighten(#38519a,90%)
                 margin: 1px
                 border-radius: 5px
-                color: #50608f
+
+                &.active
+                    background: lighten(#38519a,90%)
+                    > a
+                        font-weight: 700
+                    .versions
+                        display: block
 
         .versions
             font-size: 14px
             margin: 0 -7px
+            display: none
+            padding-top: 5px
+            border-top: 1px solid lighten(#38519a,85%)
 
             > li
                 border-radius: 3px
-                background: lighten(#38519a,97%)
                 margin: 1px
                 line-height: 1.5em
                 padding: 2px 17px
             > li.active
+                background: #fff
                 font-weight: 700
-                color: lighten(#38519a,50%)
+                margin-right: -6px
+                border-radius: 3px 0 0 3px

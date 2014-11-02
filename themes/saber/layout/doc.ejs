@@ -1,23 +1,9 @@
 <script>
-var DOC_DATA = <% include ../../../docs.json %>;
+window.DOC_DATA = <% include ../../../docs.json %>;
 </script>
 
-<main class="doc" data-repo="<%= page.repo %>" data-version="<%= page.ref %>">
-    <aside>
-        <ul class="repos">
-            <li>saber-ajax</li>
-            <li class="active">
-                saber-dom
-                <ul class="versions">
-                    <li class="active">0.4.0</li>
-                    <li>0.3.0</li>
-                    <li>0.2.0</li>
-                </ul>
-            </li>
-            <li>saber-emitter</li>
-            <li>saber-matchmedia</li>
-        </ul>
-    </aside>
+<main class="doc">
+    <aside id="doc-menu" data-repo="<%= page.repo || '' %>" data-version="<%= page.ref || '' %>"></aside>
     <%- partial('_partial/article', {post: page, index: false}) %>
     <%- partial('_partial/comment') %>
 </main>
