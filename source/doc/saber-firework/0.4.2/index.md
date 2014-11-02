@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-9-31 2:55:4
+date: 2014-10-2 5:35:35
 repo: saber-firework
 ref: 0.4.2
 ---
@@ -24,7 +24,7 @@ firework.load({
 firework.start();
 ```
 
-具体请参考[使用指南](doc/guide.md)
+具体请参考[使用指南](doc/guid.html)
 
 ## API
 
@@ -32,14 +32,14 @@ firework.start();
 
 加载路由配置信息
 
-* `route` `{Object|Array.<Object>}` 路由配置信息，具体参考[doc/route](doc/route.md)
+* `route` `{Object|Array.<Object>}` 路由配置信息，具体参考[doc/route](doc/rout.html)
 
 ### .start(ele, options)
 
 启动App
 
 * `ele ` `{HTMLElement}` 容器元素
-* `options` `{Object}` 全局配置信息，具体参考[doc/config](doc/config.md)
+* `options` `{Object}` 全局配置信息，具体参考[doc/config](doc/confi.html)
 
 ### .addFilter(url, fn)
 
@@ -88,10 +88,10 @@ firework.addFilter(/^\/admin\//, function (route, next, stop, jump) {
 加载页面前事件，有两个参数，`after`待转加载页面信息 与 `before`当前页面信息
 
 * `{Object}` after 待转加载页面信息
-* `{Action}` after.action 待转加载的[action对象](doc/action.md)
+* `{Action}` after.action 待转加载的[action对象](doc/actio.html)
 * `{Page}` after.page 待转加载的[page对象](https://github.com/ecomfe/saber-viewport#page)
 * `{Object}` before 当前页面信息
-* `{Action}` before.action 当前的[action对象](doc/action.md)
+* `{Action}` before.action 当前的[action对象](doc/actio.html)
 * `{Page}` before.page 当前的[page对象](https://github.com/ecomfe/saber-viewport#page)
 
 ### beforetransition
