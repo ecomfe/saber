@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     
     
-    <title>saber</title>
+    <title>saber-string | saber</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no, email=no">
@@ -57,51 +57,62 @@ window.DOC_DATA = [{"name":"rider","versions":[{"name":"0.1.0"},{"name":"0.1.1"}
 </script>
 
 <main>
-    <aside id="doc-menu" data-repo="saber-firework" data-version="0.3.1"></aside>
+    <aside id="doc-menu" data-repo="saber-string" data-version="1.0.0"></aside>
     <article>
     
+    <h1 class="article-title">saber-string</h1>
+    
 
-    <h1 id="saber-firework_">saber-firework <a href="https://travis-ci.org/ecomfe/saber-firework" target="_blank" rel="external"><img src="https://travis-ci.org/ecomfe/saber-firework.png" alt="Build Status"></a></h1>
-<p>移动端<code>MVP</code>开发框架，使用<a href="https://github.com/ecomfe/etpl" target="_blank" rel="external">etpl</a>作为模版引擎，结合<a href="https://github.com/ecomfe/saber-viewport" target="_blank" rel="external">页面转场</a>与<a href="https://github.com/ecomfe/saber-router" target="_blank" rel="external">路由管理</a>，提供完整的<code>SPA</code>解决方案。</p>
+    <p>适合移动端的字符串处理模块。</p>
+<h2 id="Installation">Installation</h2>
+<p>通过 <a href="https://github.com/ecomfe/edp" target="_blank" rel="external">edp</a> 引入模块：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edp import saber-string</div></pre></td></tr></table></figure>
+
 <h2 id="Usage">Usage</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> firework = <span class="built_in">require</span>(<span class="string">'saber-firework'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加载index配置</span></div><div class="line">firework.load({</div><div class="line">    path: <span class="string">'/index'</span>,</div><div class="line">    action: <span class="built_in">require</span>(<span class="string">'./index'</span>)</div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">// 启动App</span></div><div class="line">firework.start();</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// `saber-string` 的函数是颗粒化的，您可以只引用需要的部分</span></div><div class="line"><span class="keyword">var</span> format = <span class="built_in">require</span>(<span class="string">'saber-string/format'</span>);</div><div class="line"><span class="keyword">var</span> greeting = format(<span class="string">'Hello, ${name}!'</span>, {name: <span class="string">'World'</span>});</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(greeting); <span class="comment">// =&gt; Hello, World!</span></div></pre></td></tr></table></figure>
 
-<p>参考<a href="doc/guide.html">使用指南</a></p>
 <h2 id="API">API</h2>
-<h3 id="-load(route)">.load(route)</h3>
-<p>加载路由配置信息</p>
+<h3 id="encodeHTML(str)">encodeHTML(str)</h3>
+<p>HTML编码</p>
 <ul>
-<li><code>route</code> <code>{Object|Array.&lt;Object&gt;}</code> 路由配置信息，具体参考<a href="doc/route.html">doc/route</a></li>
+<li><strong>str</strong> <code>{string}</code> 待编码字符串</li>
+<li><em>return</em> <code>{string}</code></li>
 </ul>
-<h3 id="-start(ele,_options)">.start(ele, options)</h3>
-<p>启动App</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">string.encodeHTML(<span class="string">'&lt;a href="#top"&gt;返回首页&lt;/a&gt;'</span>);</div><div class="line"><span class="comment">// =&gt; &lt;a href=&quot;#top&quot;&gt;返回首页&lt;/a&gt;</span></div></pre></td></tr></table></figure>
+
+<h3 id="decodeHTML(str)">decodeHTML(str)</h3>
+<p>HTML解码</p>
 <ul>
-<li><code>ele</code> <code>{HTMLElement}</code> 容器元素</li>
-<li><code>options</code> <code>{Object}</code> 全局配置信息，具体参考<a href="doc/config.html">doc/config</a></li>
+<li><strong>str</strong> <code>{string}</code> 待解码字符串</li>
+<li><em>return</em> <code>{string}</code></li>
 </ul>
-<h2 id="Events">Events</h2>
-<h3 id="beforeload">beforeload</h3>
-<p>加载页面前事件，有两个参数，<code>after</code>待转加载页面信息 与 <code>before</code>当前页面信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">string.decodeHTML(<span class="string">'&lt;b&gt;lo&#45;dash&lt;/b&gt;'</span>);</div><div class="line"><span class="comment">// =&gt; &lt;b&gt;lo-dash&lt;/b&gt;</span></div></pre></td></tr></table></figure>
+
+<h3 id="format(template,_data)">format(template, data)</h3>
+<p>字符串格式化，替换字符串中的 <code>${xx}</code> 字符，将 <code>xx</code> 作为 <code>data</code> 的字段名或者参数，使用返回的结果加以替换</p>
 <ul>
-<li><code>{Object}</code> after 待转加载页面信息</li>
-<li><code>{Action}</code> after.action 待转加载的<a href="doc/action.html">action对象</a></li>
-<li><code>{Page}</code> after.page 待转加载的<a href="https://github.com/ecomfe/saber-viewport#page" target="_blank" rel="external">page对象</a></li>
-<li><code>{Object}</code> before 当前页面信息</li>
-<li><code>{Action}</code> before.action 当前的<a href="doc/action.html">action对象</a></li>
-<li><code>{Page}</code> before.page 当前的<a href="https://github.com/ecomfe/saber-viewport#page" target="_blank" rel="external">page对象</a></li>
+<li><strong>template</strong> <code>{string}</code> 待解码字符串</li>
+<li><strong>data</strong> <code>{Object|Array|Function}</code> 数据</li>
+<li><em>return</em> <code>{string}</code></li>
 </ul>
-<h3 id="afterload">afterload</h3>
-<p>页面加载完成事件，有两个参数，<code>after</code>当前已加载的页面信息 与 <code>before</code>之前的页面信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// `data` 为 `Object` 时</span></div><div class="line">string.format(<span class="string">'${greeting}, ${name}!'</span>, {</div><div class="line">    greeting: <span class="string">'Hello'</span>,</div><div class="line">    name: <span class="string">'Saber'</span></div><div class="line">});</div><div class="line"><span class="comment">// =&gt; Hello, Saber!</span></div><div class="line"></div><div class="line"><span class="comment">// `data` 为 `Array` 时</span></div><div class="line">string.format(<span class="string">'${1}, ${0}!'</span>, [<span class="string">'Hello'</span>, <span class="string">'Saber'</span>]);</div><div class="line"><span class="comment">// =&gt; Saber, Hello!</span></div><div class="line"></div><div class="line"><span class="comment">// `data` 为 `Function` 时</span></div><div class="line">string.format(<span class="string">'${greeting}, ${name}!'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(key)</span> </span>{</div><div class="line">    <span class="keyword">return</span> key , <span class="string">'name'</span> ? <span class="string">'Saber'</span> : <span class="string">'Hi'</span>;</div><div class="line">});</div><div class="line"><span class="comment">// =&gt; Hi, Saber!</span></div></pre></td></tr></table></figure>
+
+<h3 id="camelize(str)">camelize(str)</h3>
+<p>驼峰化，例如将 <code>ui-button</code> 转变化 <code>uiButton</code></p>
 <ul>
-<li><code>{Object}</code> after 当前已加载的页面信息</li>
-<li><code>{Action}</code> after.action 当前已加载的<a href="doc/action.html">action对象</a></li>
-<li><code>{Page}</code> after.page 当前已加载的<a href="https://github.com/ecomfe/saber-viewport#page" target="_blank" rel="external">page对象</a></li>
-<li><code>{Object}</code> before 之前的页面信息</li>
-<li><code>{Action}</code> before.action 之前的<a href="doc/action.html">action对象</a></li>
-<li><code>{Page}</code> before.page 之前的<a href="https://github.com/ecomfe/saber-viewport#page" target="_blank" rel="external">page对象</a></li>
+<li><strong>target</strong> <code>{string}</code> 目标字符串</li>
+<li><em>return</em> <code>{string}</code></li>
 </ul>
-<p>===</p>
-<p><a href="http://ecomfe.github.io/saber/" target="_blank" rel="external"><img src="https://f.cloud.github.com/assets/157338/1485433/aeb5c72a-4714-11e3-87ae-7ef8ae66e605.png" alt="Saber"></a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">string.camelize(<span class="string">'ui-button'</span>);</div><div class="line"><span class="comment">// =&gt; uiButton</span></div><div class="line"></div><div class="line">string.camelize(<span class="string">'-webkit-box-shadow'</span>);</div><div class="line"><span class="comment">// =&gt; WebkitBoxShadow</span></div></pre></td></tr></table></figure>
+
+<h3 id="dasherize(str)">dasherize(str)</h3>
+<p>转换为中线链接命名，例如将 <code>backgroundColor</code> 转换为 <code>background-color</code></p>
+<ul>
+<li><strong>target</strong> <code>{string}</code> 目标字符串</li>
+<li><em>return</em> <code>{string}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">string.dasherize(<span class="string">'fontSize'</span>);</div><div class="line"><span class="comment">// =&gt; font-size</span></div><div class="line"></div><div class="line">string.dasherize(<span class="string">'WebkitTransform'</span>);</div><div class="line"><span class="comment">// =&gt; -webkit-transform</span></div></pre></td></tr></table></figure>
+
 
 </article>
 
