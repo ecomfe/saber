@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     
     
-    <title>saber</title>
+    <title>saber-storage | saber</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no, email=no">
@@ -57,21 +57,75 @@ window.DOC_DATA = [{"name":"rider","versions":[{"name":"0.1.0"},{"name":"0.1.1"}
 </script>
 
 <main>
-    <aside id="doc-menu" data-repo="saber-firework" data-version="0.4.0"></aside>
+    <aside id="doc-menu" data-repo="saber-storage" data-version="1.0.0"></aside>
     <article>
     
+    <h1 class="article-title">saber-storage</h1>
+    
 
-    <h1 id="Model">Model</h1>
-<h2 id="Model_配置信息">Model 配置信息</h2>
+    <p>移动端本地存储模块。使用LocalStorage进行本地存储，提供了存储溢出的事件。</p>
+<h2 id="Installation">Installation</h2>
+<p>通过 <a href="https://github.com/ecomfe/edp" target="_blank" rel="external">edp</a> 引入模块：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edp import saber-storage</div></pre></td></tr></table></figure>
+
+<h2 id="Usage">Usage</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Storage = <span class="built_in">require</span>(<span class="string">'saber-storage'</span>);</div><div class="line"><span class="keyword">var</span> storage = <span class="keyword">new</span> Storage({</div><div class="line">    storageId: <span class="string">'someNameDomain'</span>,    <span class="comment">// optional</span></div><div class="line">    memoryCache: <span class="literal">false</span>      <span class="comment">// optional</span></div><div class="line">});</div><div class="line"><span class="comment">// 存入</span></div><div class="line">storage.setItem(<span class="string">'string'</span>, <span class="string">'this is a string'</span>);</div><div class="line">storage.setItem(<span class="string">'object'</span>, {a: <span class="number">1</span>});</div><div class="line"><span class="keyword">var</span> isSuccess = storage.setItem(<span class="string">'array'</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</div><div class="line"></div><div class="line"><span class="keyword">if</span> (isSuccess) {</div><div class="line">    <span class="comment">// Save success!</span></div><div class="line">} <span class="keyword">else</span> {</div><div class="line">    <span class="comment">// Save fail!</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// 取出</span></div><div class="line"><span class="keyword">var</span> value = storage.getItem(<span class="string">'string'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 移除某一键值下的数据</span></div><div class="line">storage.removeItem(<span class="string">'string'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 清空全部数据</span></div><div class="line">storage.clear();</div><div class="line"></div><div class="line"><span class="comment">//事件派发</span></div><div class="line">storage.on(Storage.Event.OUT_OF_LIMIT, <span class="function"><span class="keyword">function</span><span class="params">(error)</span> </span>{</div><div class="line">    <span class="comment">// 空间存满</span></div><div class="line">} );</div></pre></td></tr></table></figure>
+
+<h2 id="API">API</h2>
+<h3 id="Constructor">Constructor</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="keyword">new</span> Storage(storageId[, memoryCache]);</div></pre></td></tr></table></figure>
+
 <ul>
-<li><code>fetch</code> <code>{Function(Object):Promise}</code> 默认数据请求方法，参数为查询条件，返回<code>Promise</code>对象，action加载时会调用此方法进行数据初始化，并将请求的结果作为视图渲染数据</li>
-<li><code>constructor</code> <code>{Object=}</code> 构造函数，默认为<code>saber-firework/Model</code></li>
-<li><code>events</code> <code>{Object=}</code> 事件配置，<code>key</code>为事件名称，<code>value</code>为事件回调函数，<code>this</code>指针指向Model实例</li>
+<li><strong>storageId</strong> <code>{String}</code>: 存储命名空间，默认存储在 <code>_SABER</code> 命名空间下</li>
+<li><strong>memoryCache</strong> <code>{Boolean}</code>: 可选项。是否开启内存级别缓存，即只存储至页面变量中，而不持久化数据。默认 <code>false</code>。</li>
 </ul>
-<h2 id="Model_实例">Model 实例</h2>
-<p>可通过给配置信息添加自定义属性的方式添加Model的实例方法，实例方法的<code>this</code>指针指向当前的Model实例，比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    update: <span class="function"><span class="keyword">function</span> <span class="params">(id, name)</span> </span>{</div><div class="line">        <span class="keyword">return</span> ajax.post(</div><div class="line">                    <span class="string">'xxx'</span>, </div><div class="line">                    {</div><div class="line">                        id: id,</div><div class="line">                        name: name</div><div class="line">                    }</div><div class="line">                );</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
-
+<h3 id="Events">Events</h3>
+<h4 id="Storage-Event-OUT_OF_LIMIT"><em>Storage.Event.OUT_OF_LIMIT</em></h4>
+<p>通过.on(eventName, callback)方法监听事件。</p>
+<p>存储空间溢出事件。当本次存储超出时，会派发该事件。需要提前监听。</p>
+<p>常见浏览器支持空间为5M左右。</p>
+<h3 id="Methods">Methods</h3>
+<h4 id="isSupport()">isSupport()</h4>
+<p>判断是否支持本地存储</p>
+<ul>
+<li><em>return</em> <code>{Boolean}</code> 是否支持</li>
+</ul>
+<h4 id="setItem(key,_val)">setItem(key, val)</h4>
+<p>存入数据</p>
+<ul>
+<li><strong>key</strong> <code>{String}</code> 存储键名</li>
+<li><strong>val</strong> <code>{*}</code> 对应键名下的数据</li>
+<li><em>return</em> <code>{Boolean}</code> 是否存储成功</li>
+</ul>
+<h4 id="getItem(key)">getItem(key)</h4>
+<p>根据键名返回数据</p>
+<ul>
+<li><strong>key</strong> <code>{String}</code> 存储键名</li>
+<li><em>return</em> <code>{*}</code> 对应键名下的数据</li>
+</ul>
+<h4 id="removeItem(key)">removeItem(key)</h4>
+<p>移除某键名下的数据</p>
+<ul>
+<li><strong>key</strong> <code>{String}</code> 存储键名</li>
+<li><em>return</em> <code>{void}</code></li>
+</ul>
+<h4 id="clear()">clear()</h4>
+<p>清空已持久化的数据</p>
+<ul>
+<li><em>return</em> <code>{void}</code></li>
+</ul>
+<h3 id="key()">key()</h3>
+<p>获得持久化数据的key</p>
+<ul>
+<li><em>return</em> <code>{Array}</code> 键名数组</li>
+</ul>
+<h4 id="on(eventName:String,_callback:Function)">on(eventName:String, callback:Function)</h4>
+<p>事件绑定。目前只支持 <em>Storage.Event.OUT_OF_LIMIT</em> 事件。</p>
+<ul>
+<li><strong>eventName</strong> <code>{String}</code> 事件名 </li>
+<li><strong>callback</strong> <code>{Function}</code> 回调函数</li>
+<li><em>return</em> <code>{void}</code></li>
+</ul>
 
 </article>
 
