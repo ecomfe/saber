@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-3 8:12:33
+date: 2014-10-3 8:31:18
 title: saber-firework
 repo: saber-firework
 ref: 1.0.0
@@ -143,7 +143,3 @@ firework.addFilter(/^\/admin\//, function (route, next, jump) {
 * [Action](doc/action.html)对象，页面行为控制
 * [View](doc/view.html)对象，页面视图管理
 * [Model](doc/model.html)对象，页面数据管理
-
-,
-
-[![Saber](https://f.cloud.github.com/assets/157338/1485433/aeb5c72a-4714-11e3-87ae-7ef8ae66e605.png)](http://ecomfe.github.io/saber/)

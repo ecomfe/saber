@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-3 8:12:33
+date: 2014-10-3 8:31:18
 title: 路由配置信息
 repo: saber-firework
 ref: 1.0.0
