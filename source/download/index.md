@@ -38,3 +38,29 @@ comments: true
     edpm init spa
 
 现在，依赖的 JavaScript 模块与 CSS 样式工具库都已经就绪了。
+
+## JavaScript 模块状态
+
+Package | Build Status | Dependencies Status
+--- | --- | ---
+[saber-ajax](https://github.com/ecomfe/saber-ajax) | [![Build Status](https://travis-ci.org/ecomfe/saber-ajax.png)](https://travis-ci.org/ecomfe/saber-ajax) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-ajax.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-ajax)
+[saber-cookie](https://github.com/ecomfe/saber-cookie) | [![Build Status](https://travis-ci.org/ecomfe/saber-cookie.png)](https://travis-ci.org/ecomfe/saber-cookie) | 无依赖
+[saber-dom](https://github.com/ecomfe/saber-dom) | [![Build Status](https://travis-ci.org/ecomfe/saber-dom.png)](https://travis-ci.org/ecomfe/saber-dom) | 无依赖
+[saber-emitter](https://github.com/ecomfe/saber-emitter) | [![Build Status](https://travis-ci.org/ecomfe/saber-emitter.png)](https://travis-ci.org/ecomfe/saber-emitter) | 无依赖
+[saber-env](https://github.com/ecomfe/saber-env) | [![Build Status](https://travis-ci.org/ecomfe/saber-env.png)](https://travis-ci.org/ecomfe/saber-env) | 无依赖
+[saber-fastbutton](https://github.com/ecomfe/saber-firework) | - | 无依赖
+[saber-firework](https://github.com/ecomfe/saber-firework) | [![Build Status](https://travis-ci.org/ecomfe/saber-firework.png)](https://travis-ci.org/ecomfe/saber-firework) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-firework.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-firework)
+[saber-geo](https://github.com/ecomfe/saber-geo) | [![Build Status](https://travis-ci.org/ecomfe/saber-geo.png)](https://travis-ci.org/ecomfe/saber-geo) | 无依赖
+[saber-lang](https://github.com/ecomfe/saber-lang) | [![Build Status](https://travis-ci.org/ecomfe/saber-lang.png)](https://travis-ci.org/ecomfe/saber-lang) | 无依赖
+[saber-log](https://github.com/ecomfe/saber-log) | [![Build Status](https://travis-ci.org/ecomfe/saber-log.png)](https://travis-ci.org/ecomfe/saber-log) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-log.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-log)
+[saber-matchmedia](https://github.com/ecomfe/saber-matchmedia) | - | 无依赖
+[saber-promise](https://github.com/ecomfe/saber-promise) | [![Build Status](https://travis-ci.org/ecomfe/saber-promise.png)](https://travis-ci.org/ecomfe/saber-promise) | 无依赖
+[saber-router](https://github.com/ecomfe/saber-router) | [![Build Status](https://travis-ci.org/ecomfe/saber-router.png)](https://travis-ci.org/ecomfe/saber-router) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-router.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-router)
+[saber-run](https://github.com/ecomfe/saber-run) | [![Build Status](https://travis-ci.org/ecomfe/saber-run.png)](https://travis-ci.org/ecomfe/saber-run) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-run.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-run)
+[saber-scroll](https://github.com/ecomfe/saber-scroll) | [![Build Status](https://travis-ci.org/ecomfe/saber-scroll.png)](https://travis-ci.org/ecomfe/saber-scroll) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-scroll.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-scroll)
+[saber-stroage](https://github.com/ecomfe/saber-stroage) | [![Build Status](https://travis-ci.org/ecomfe/saber-stroage.png)](https://travis-ci.org/ecomfe/saber-stroage) | 无依赖
+[saber-string](https://github.com/ecomfe/saber-string) | [![Build Status](https://travis-ci.org/ecomfe/saber-string.png)](https://travis-ci.org/ecomfe/saber-string) | 无依赖
+[saber-tap](https://github.com/ecomfe/saber-tap) | - | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-tap.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-tap)
+[saber-uri](https://github.com/ecomfe/saber-uri) | [![Build Status](https://travis-ci.org/ecomfe/saber-uri.png)](https://travis-ci.org/ecomfe/saber-uri) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-uri.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-uri)
+[saber-viewport](https://github.com/ecomfe/saber-viewport) | [![Build Status](https://travis-ci.org/ecomfe/saber-viewport.png)](https://travis-ci.org/ecomfe/saber-viewport) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-viewport.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-viewport)
+[saber-widget](https://github.com/ecomfe/saber-widget) | [![Build Status](https://travis-ci.org/ecomfe/saber-widget.png)](https://travis-ci.org/ecomfe/saber-widget) | [![Dependency Status](http://edp-api.baidu.com/d/e/ecomfe/saber-widget.png)](http://edp-api.baidu.com/d/e/ecomfe/saber-widget)
