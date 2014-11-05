@@ -123,10 +123,15 @@ home-section-title()
 
     +above(4)
         li
-            border: 1px solid #efefef
             margin: 5px
             padding: 5px
             width: 240px
+
+        a
+            opacity: .6
+            &:hover
+                -webkit-filter: none
+                opacity: 1
 
         // logos
         .baidu-baozhang a
@@ -158,6 +163,7 @@ home-section-title()
             a
                 bg: '../img/showcase-logo.png'
                 size: 70px 25px
+                opacity: .8
         // logos
         .baidu-baozhang a
             background-position: -75px 0
