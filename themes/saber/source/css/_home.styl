@@ -87,13 +87,25 @@
         &:after
             content: ' \bb'
 
-.showcase
-    padding: 25px
-    border-top: 1px solid #efefef
+home-section-title()
     h2
         clear: both
         text-align: center
         color: #50608f
+    +above(4)
+        h2
+            font-size: 30px
+            margin: 35px auto
+    +below(3)
+        h2
+            font-size: 24px
+            margin: 20px auto
+
+.showcase
+    padding: 25px
+    border-top: 1px solid #efefef
+    home-section-title()
+
     ul
         margin: 35px auto
         clearfix()
@@ -110,9 +122,6 @@
             hide-text()
 
     +above(4)
-        h2
-            font-size: 30px
-            margin: 35px auto
         li
             border: 1px solid #efefef
             margin: 5px
@@ -140,10 +149,8 @@
 
     +below(3)
         padding: 20px 10px
-        h2
-            font-size: 24px
-            margin: 25px auto
         ul
+            margin: 25px auto
             width: 300px
         li
             width: 50%
@@ -194,3 +201,16 @@
         float: left
         clear: right
 
+.video
+    padding: 25px 0
+    border-top: 1px solid #efefef
+    home-section-title()
+    video
+        display: block
+        margin: 25px auto
+        +above(5)
+            width: 1000px
+        +at(4)
+            width: 760px
+        +below(3)
+            width: 300px
