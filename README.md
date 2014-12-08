@@ -3,6 +3,8 @@
 
 这是一个灵活、高效、可维护的移动 Web 解决方案，帮你轻松搞定从 JavaScript 模块到 CSS 样式库，从开发、调试到构建的全过程。
 
+Hi群：1455757，QQ群：334641302
+
 * [官网](http://ecomfe.github.io/saber/)
 * [特性](http://ecomfe.github.io/saber/feature/)
 * [文档](http://ecomfe.github.io/saber/doc/)
