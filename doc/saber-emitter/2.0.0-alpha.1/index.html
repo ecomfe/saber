@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     
     
-    <title>saber</title>
+    <title>saber-emitter | saber</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no, email=no">
@@ -57,43 +57,89 @@ window.DOC_DATA = [{"name":"rider","versions":[{"name":"0.1.0"},{"name":"0.1.1"}
 </script>
 
 <main>
-    <aside id="doc-menu" data-repo="saber-storage" data-version="0.1.0"></aside>
+    <aside id="doc-menu" data-repo="saber-emitter" data-version="2.0.0-alpha.1"></aside>
     <article>
     
+    <h1 class="article-title">saber-emitter</h1>
+    
 
-    <p>==</p>
-<p>移动端本地存储模块</p>
+    <p>一个适用于移动端的事件发射器。</p>
+<h2 id="Installation">Installation</h2>
+<p>通过 <a href="https://github.com/ecomfe/edp" target="_blank" rel="external">edp</a> 引入模块：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edp import saber-emitter</div></pre></td></tr></table></figure>
+
 <h2 id="Usage">Usage</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> Storage = <span class="built_in">require</span>( <span class="string">'saber-storage'</span> );</div><div class="line"><span class="keyword">var</span> storage = <span class="keyword">new</span> Storage({</div><div class="line">    storageId: <span class="string">'someNameDomain'</span>,    <span class="comment">//optional</span></div><div class="line">    memoryCache: <span class="literal">false</span>    <span class="comment">//optional</span></div><div class="line">});</div><div class="line"><span class="comment">//存入</span></div><div class="line">storage.setItem( <span class="string">'string'</span>, <span class="string">'this is a string'</span> );</div><div class="line">storage.setItem( <span class="string">'object'</span>, { a: <span class="number">1</span> } );</div><div class="line"><span class="keyword">var</span> isSuccess = storage.setItem( <span class="string">'array'</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] );</div><div class="line"></div><div class="line"><span class="keyword">if</span> (isSuccess) {</div><div class="line">    <span class="comment">// Save success!</span></div><div class="line">    </div><div class="line">} <span class="keyword">else</span> {</div><div class="line">    <span class="comment">// Save fail!</span></div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">//取出</span></div><div class="line"><span class="keyword">var</span> value = storage.getItem( <span class="string">'string'</span> );</div><div class="line"></div><div class="line"><span class="comment">//移除某一键值下的数据</span></div><div class="line">storage.removeItem( <span class="string">'string'</span> );</div><div class="line"></div><div class="line"><span class="comment">//清空全部数据</span></div><div class="line">storage.clear();</div><div class="line"></div><div class="line"><span class="comment">//事件派发</span></div><div class="line">storage.on( Storage.Event.OUT_OF_LIMIT, <span class="function"><span class="keyword">function</span><span class="params">( error )</span> </span>{</div><div class="line">    <span class="comment">//空间存满</span></div><div class="line">    </div><div class="line">} );</div></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">'saber-emitter'</span>], <span class="function"><span class="keyword">function</span><span class="params">(Emitter)</span> </span>{</div><div class="line">    <span class="keyword">var</span> emitter = <span class="keyword">new</span> Emitter();</div><div class="line"></div><div class="line">    emitter.on(<span class="string">'greeting'</span>, <span class="function"><span class="keyword">function</span><span class="params">(name)</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello, '</span> + name + <span class="string">'!'</span>);</div><div class="line">    });</div><div class="line"></div><div class="line">    emitter.emit(<span class="string">'greeting'</span>, <span class="string">'Firede'</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
 
 <h2 id="API">API</h2>
-<h3 id="Constructor">Constructor</h3>
-<pre><code>Storage({
-    [optional] storageId:<span class="built_in">String</span>,
-    [optional] memoryCache=<span class="literal">false</span>:<span class="built_in">Boolean</span>
-})
-</code></pre><p>storageId: 存储命名空间，默认存储在”_SABER”命名空间下</p>
-<p>memoryCache: 是否开启内存级别缓存，即只存储至页面变量中，而不持久化数据。默认false。</p>
-<h3 id="Events">Events</h3>
-<p><strong>Storage.Event.OUT_OF_LIMIT</strong></p>
-<p>存储空间溢出事件。当本次存储超出时，会派发该事件。需要提前监听。</p>
-<p>常见浏览器支持空间为5M左右。</p>
+<p>创建 <code>Emitter</code> 实例</p>
+<ul>
+<li><em>return</em> <code>{Emitter}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Emitter = <span class="built_in">require</span>(<span class="string">'saber-emitter'</span>);</div><div class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> Emitter();</div></pre></td></tr></table></figure>
+
 <h3 id="Methods">Methods</h3>
-<p><strong>.isSupport():Boolean</strong></p>
-<p>判断是否支持本地存储</p>
-<p><strong>.setItem( key:String, val:* ):Boolean</strong></p>
-<p>存入数据</p>
-<p><strong>.getItem( key:String ):*</strong></p>
-<p>根据key返回数据</p>
-<p><strong>.removeItem( key:String ):void</strong></p>
-<p>移除某键位下的数据</p>
-<p><strong>.clear():void</strong></p>
-<p>清空已持久化的数据</p>
-<p><strong>.key():Array</strong></p>
-<p>获得持久化数据的key</p>
-<p><strong>.on(eventName:String, callback:Function):void</strong></p>
-<p>事件绑定。目前只支持<em>Storage.Event.OUT_OF_LIMIT</em>事件。</p>
+<h4 id="mixin(obj)">mixin(obj)</h4>
+<p>通过 <code>mixin</code> 将 <code>Emitter</code> 混入目标对象</p>
+<ul>
+<li><strong>obj</strong> <code>{Object}</code> 目标对象</li>
+<li><em>return</em> <code>{Object}</code> 混入 Emitter 后的目标对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = {};</div><div class="line">Emitter.mixin(obj);</div><div class="line"></div><div class="line">obj.emit(<span class="string">'foo'</span>);</div></pre></td></tr></table></figure>
+
+<h3 id="Classes">Classes</h3>
+<h4 id="on(event,_listener)">on(event, listener)</h4>
+<p>挂载事件</p>
+<ul>
+<li><strong>event</strong> <code>{string}</code> 事件名</li>
+<li><strong>listener</strong> <code>{Function}</code> 监听器</li>
+<li><em>return</em> <code>{Emitter}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listenerFn</span><span class="params">(name)</span> </span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">}</div><div class="line">emitter.on(<span class="string">'say'</span>, listenerFn);</div></pre></td></tr></table></figure>
+
+<h4 id="once(event,_listener)">once(event, listener)</h4>
+<p>挂载只执行一次的事件</p>
+<ul>
+<li><strong>event</strong> <code>{string}</code> 事件名</li>
+<li><strong>listener</strong> <code>{Function}</code> 监听器</li>
+<li><em>return</em> <code>{Emitter}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter.once(<span class="string">'say'</span>, listenerFn);</div></pre></td></tr></table></figure>
+
+<h4 id="off([event[,_listener]])">off([event[, listener]])</h4>
+<p>注销事件与监听器</p>
+<ul>
+<li><strong>event</strong> <code>{string=}</code> 事件名</li>
+<li><strong>listener</strong> <code>{Function=}</code> 监听器</li>
+<li><em>return</em> <code>{Emitter}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// `不传参数` 将注销当前实例的所有事件</span></div><div class="line">emitter.off();</div><div class="line"></div><div class="line"><span class="comment">// 只传入 `event` 将注销该事件下挂载的所有监听器</span></div><div class="line">emitter.off(<span class="string">'say'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 传入 `event` 与 `listener` 将只注销该监听器</span></div><div class="line">emitter.off(<span class="string">'say'</span>, listenerFn);</div></pre></td></tr></table></figure>
+
+<h4 id="emit(event[,_…args])">emit(event[, …args])</h4>
+<p>触发事件</p>
+<ul>
+<li><strong>event</strong> <code>{string}</code> 事件名</li>
+<li><strong>args</strong> <code>{...*}</code> 传递给监听器的参数，可以有多个</li>
+<li><em>return</em> <code>{Emitter}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">emitter.emit(<span class="string">'say'</span>);</div><div class="line">emitter.emit(<span class="string">'say'</span>, <span class="string">'hello'</span>);</div><div class="line">emitter.emit(<span class="string">'say'</span>, <span class="string">'hello'</span>, <span class="string">'world'</span>);</div></pre></td></tr></table></figure>
+
+<h4 id="listeners(event)">listeners(event)</h4>
+<p>返回指定事件的监听器列表</p>
+<ul>
+<li><strong>event</strong> <code>{string}</code> 事件名</li>
+<li><em>return</em> <code>{Array}</code> 监听器列表</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> listeners = emitter.listeners(<span class="string">'say'</span>);</div></pre></td></tr></table></figure>
+
+<h4 id="setMaxListeners(number)">setMaxListeners(number)</h4>
+<p>设置每个事件下，监听器的最大个数。为 <code>0</code> 时不限制，默认值是 <code>10</code></p>
+<ul>
+<li><strong>number</strong> <code>{number}</code> 监听器个数</li>
+<li><em>return</em> <code>{Emitter}</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter.setMaxListeners(<span class="number">8</span>);</div></pre></td></tr></table></figure>
+
 
 </article>
 
