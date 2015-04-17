@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     
     
-    <title>saber</title>
+    <title>saber-router | saber</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no, email=no">
@@ -57,21 +57,87 @@ window.DOC_DATA = [{"name":"rider","versions":[{"name":"0.1.0"},{"name":"0.1.1"}
 </script>
 
 <main>
-    <aside id="doc-menu" data-repo="saber-firework" data-version="0.3.1"></aside>
+    <aside id="doc-menu" data-repo="saber-router" data-version="2.0.0-beta.1"></aside>
     <article>
     
+    <h1 class="article-title">saber-router</h1>
+    
 
-    <h1 id="Model">Model</h1>
-<h2 id="Model_配置信息">Model 配置信息</h2>
+    <p>适用于移动端的路由控制</p>
 <ul>
-<li><code>fetch</code> <code>{Function(Object):Promise}</code> 默认数据请求方法，参数为查询条件，返回<code>Promise</code>对象，action加载时会调用此方法进行数据初始化，并将请求的结果作为视图渲染数据</li>
-<li><code>constructor</code> <code>{Object=}</code> 构造函数，默认为<code>saber-firework/Model</code></li>
-<li><code>events</code> <code>{Object=}</code> 事件配置，<code>key</code>为事件名称，<code>value</code>为事件回调函数，<code>this</code>指针指向Model实例</li>
+<li>支持<code>hash</code>、<code>popstate</code>与普通的多页面</li>
+<li>支持相对路径 <code>../somewhere/action</code></li>
+<li>支持正则表达式控制路径</li>
+<li>支持<code>RESTful</code></li>
+<li><code>hash</code>路由使用<code>~</code>分隔查询条件 <code>#/action~uid=100&amp;name=saber</code></li>
 </ul>
-<h2 id="Model_实例">Model 实例</h2>
-<p>可通过给配置信息添加自定义属性的方式添加Model的实例方法，实例方法的<code>this</code>指针指向当前的Model实例，比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    update: <span class="function"><span class="keyword">function</span> <span class="params">(id, name)</span> </span>{</div><div class="line">        <span class="keyword">return</span> ajax.post(</div><div class="line">                    <span class="string">'xxx'</span>, </div><div class="line">                    {</div><div class="line">                        id: id,</div><div class="line">                        name: name</div><div class="line">                    }</div><div class="line">                );</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="Installation">Installation</h2>
+<p>通过 <a href="https://github.com/ecomfe/edp" target="_blank" rel="external">edp</a> 引入模块：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edp import saber-router</div></pre></td></tr></table></figure>
 
+<h2 id="Usage">Usage</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'saber-router'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 启用hash控制器</span></div><div class="line">router.controller(<span class="built_in">require</span>(<span class="string">'saber-router/controller/hash'</span>));</div><div class="line"></div><div class="line"><span class="comment">// 添加路由规则</span></div><div class="line">router.add(</div><div class="line">    <span class="string">'/custom/:id'</span>, <span class="comment">// RESTful风格</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="params">(path, query, url)</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(query.id);</div><div class="line">    }</div><div class="line">);</div><div class="line"></div><div class="line"><span class="comment">// 开始路由监听</span></div><div class="line">router.start();</div></pre></td></tr></table></figure>
+
+<h2 id="API">API</h2>
+<h3 id="Methods">Methods</h3>
+<h4 id="config([options])">config([options])</h4>
+<p>全局配置</p>
+<ul>
+<li><strong>options</strong> <code>{Object=}</code> 配置参数<ul>
+<li><strong>path</strong> <code>{string=}</code> 初始路径 默认为<code>&#39;/&#39;</code>，只对<code>hash</code>控制器生效</li>
+<li><strong>index</strong> <code>{string=}</code> index文件名 默认为<code>&#39;&#39;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="controller(con)">controller(con)</h4>
+<p>设置控制控制</p>
+<ul>
+<li><strong>con</strong> <code>{Object}</code> 控制器，有以下控制器供选择<ul>
+<li><a href="src/controller/hash.js">hash</a> hash控制器</li>
+<li><a href="src/controller/popstate.js">popstate</a> popstate控制器</li>
+<li><a href="src/controller/page.js">page</a> 多页面控制器</li>
+</ul>
+</li>
+</ul>
+<h4 id="add(path,_fn[,_thisArg])">add(path, fn[, thisArg])</h4>
+<p>添加路由规则</p>
+<ul>
+<li><strong>path</strong> <code>{string|RegExp}</code> 路由路径，如果是空字符串则认为是设置默认路由。在路由处理未找到对应路由规则时，会使用此默认路由进行处理</li>
+<li><strong>fn</strong> <code>{function(string, Object, Object, string, Object)}</code> 路由处理函数（函数参数分别是：path、查询条件、路径参数、完整URL、跳转参数，具体跳转参数请参考<a href="#redirecturl-query-options">redirect(url, query, options)</a>）</li>
+<li><strong>thisArg</strong> <code>{Object=}</code> 路径处理函数的<code>this</code>指针</li>
+</ul>
+<h4 id="remove(path)">remove(path)</h4>
+<p>删除路由规则</p>
+<ul>
+<li><strong>path</strong> <code>{string}</code> 需要删除的路由路径</li>
+</ul>
+<h4 id="clear()">clear()</h4>
+<p>清除所有路由规则</p>
+<h4 id="reset(url[,_query[,_options]])">reset(url[, query[, options]])</h4>
+<p>重置当前的URL（不产生新的浏览历史记录），只对<code>hash</code>与<code>popstate</code>控制器生效</p>
+<ul>
+<li><strong>url</strong> <code>{string}</code> url</li>
+<li><strong>query</strong> <code>{Object=}</code> 查询条件</li>
+<li><strong>options</strong> <code>{Object=}</code> 重置参数<ul>
+<li><strong>silent</strong> <code>{boolean=}</code> 是否静默重置，如果静默重置则不会触发相应的路由规则处理</li>
+</ul>
+</li>
+</ul>
+<h4 id="redirect(url[,_query[,_options]])">redirect(url[, query[, options]])</h4>
+<p>URL跳转</p>
+<ul>
+<li><strong>url</strong> <code>{string}</code> url</li>
+<li><strong>query</strong> <code>{Object=}</code> 查询条件</li>
+<li><strong>options</strong> <code>{options=}</code> 跳转参数<ul>
+<li><strong>force</strong> <code>{boolean=}</code> 是否强制跳转（默认情况下相同URL不跳转）</li>
+<li><strong>silent</strong> <code>{boolean=}</code> 是否静默跳转，如果静默跳转则不改变当前的URL</li>
+</ul>
+</li>
+</ul>
+<h4 id="start()">start()</h4>
+<p>启动路由监听</p>
+<h4 id="stop()">stop()</h4>
+<p>停止路由监听</p>
 
 </article>
 
