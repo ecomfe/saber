@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     
     
-    <title>saber</title>
+    <title>saber-storage | saber</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no, email=no">
@@ -57,136 +57,76 @@ window.DOC_DATA = [{"name":"rider","versions":[{"name":"0.1.0"},{"name":"0.1.1"}
 </script>
 
 <main>
-    <aside id="doc-menu" data-repo="saber-cookie" data-version="0.1.0"></aside>
+    <aside id="doc-menu" data-repo="saber-storage" data-version="2.0.0-beta.1"></aside>
     <article>
     
+    <h1 class="article-title">saber-storage</h1>
+    
 
-    <h1 id="saber-cookie">saber-cookie</h1>
-<p>适合移动端的Cookie封装</p>
+    <p>移动端本地存储模块。使用LocalStorage进行本地存储，提供了存储溢出的事件。</p>
+<h2 id="Installation">Installation</h2>
+<p>通过 <a href="https://github.com/ecomfe/edp" target="_blank" rel="external">edp</a> 引入模块：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">edp import saber-storage</div></pre></td></tr></table></figure>
+
 <h2 id="Usage">Usage</h2>
-<h5 id="通过edp引入模块">通过<code>edp</code>引入模块</h5>
-<pre><code>edp <span class="preprocessor"><span class="keyword">import</span> saber-cookie</span>
-</code></pre><h5 id="使用示例:">使用示例:</h5>
-<pre><code>require( <span class="string">'saber-cookie'</span>, <span class="function"><span class="keyword">function</span><span class="params">( Cookie )</span> </span>{
-    <span class="comment">// create a cookie (page-session)</span>
-    Cookie.<span class="keyword">set</span>( <span class="string">'__saber_test'</span>, <span class="string">'saber'</span> );
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Storage = <span class="built_in">require</span>(<span class="string">'saber-storage'</span>);</div><div class="line"><span class="keyword">var</span> storage = <span class="keyword">new</span> Storage({</div><div class="line">    storageId: <span class="string">'someNameDomain'</span>,    <span class="comment">// optional</span></div><div class="line">    memoryCache: <span class="literal">false</span>      <span class="comment">// optional</span></div><div class="line">});</div><div class="line"><span class="comment">// 存入</span></div><div class="line">storage.setItem(<span class="string">'string'</span>, <span class="string">'this is a string'</span>);</div><div class="line">storage.setItem(<span class="string">'object'</span>, {a: <span class="number">1</span>});</div><div class="line"><span class="keyword">var</span> isSuccess = storage.setItem(<span class="string">'array'</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</div><div class="line"></div><div class="line"><span class="keyword">if</span> (isSuccess) {</div><div class="line">    <span class="comment">// Save success!</span></div><div class="line">} <span class="keyword">else</span> {</div><div class="line">    <span class="comment">// Save fail!</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// 取出</span></div><div class="line"><span class="keyword">var</span> value = storage.getItem(<span class="string">'string'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 移除某一键值下的数据</span></div><div class="line">storage.removeItem(<span class="string">'string'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 清空全部数据</span></div><div class="line">storage.clear();</div><div class="line"></div><div class="line"><span class="comment">//事件派发</span></div><div class="line">storage.on(Storage.Event.OUT_OF_LIMIT, <span class="function"><span class="keyword">function</span><span class="params">(error)</span> </span>{</div><div class="line">    <span class="comment">// 空间存满</span></div><div class="line">} );</div></pre></td></tr></table></figure>
 
-    <span class="comment">// get a cookie with given name</span>
-    <span class="keyword">var</span> val = Cookie.<span class="keyword">get</span>( <span class="string">'__saber_test'</span> );
-    console.info( val );
+<h2 id="API">API</h2>
+<h3 id="Constructor">Constructor</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="keyword">new</span> Storage(storageId[, memoryCache]);</div></pre></td></tr></table></figure>
 
-    <span class="comment">// create a cookie with expires (1 day)</span>
-    Cookie.<span class="keyword">set</span>(
-        <span class="string">'__saber_1d'</span>,
-        <span class="string">'1day'</span>,
-        { expires: <span class="number">1</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span> }
-    );
-    console.info( Cookie.<span class="keyword">get</span>( <span class="string">'__saber_1d'</span> ) );
-
-    <span class="comment">// create a cookie with path</span>
-    Cookie.<span class="keyword">set</span>(
-        <span class="string">'__saber_root'</span>,
-        <span class="string">'root'</span>,
-        { path: <span class="string">'/'</span> }
-    );
-    console.info( Cookie.<span class="keyword">get</span>( <span class="string">'__saber_root'</span> ) );
-
-    <span class="comment">// create a cookie with domain</span>
-    Cookie.<span class="keyword">set</span>(
-        <span class="string">'__saber_host'</span>,
-        { domain: document.domain }
-    );
-    console.info( Cookie.<span class="keyword">get</span>( <span class="string">'__saber_host'</span> ) );
-
-    <span class="comment">// create a cookie with raw value</span>
-    Cookie.<span class="keyword">set</span>(
-        <span class="string">'__saber_raw'</span>,
-        <span class="string">'百度一下,你就知道~~'</span>,
-        { raw: <span class="literal">true</span> }
-    );
-    console.info(
-        <span class="string">'decoded: %s , raw: %s'</span>,
-        Cookie.<span class="keyword">get</span>( <span class="string">'__saber_raw'</span> ),
-        Cookie.<span class="keyword">get</span>( <span class="string">'__saber_raw'</span>, { raw: <span class="literal">true</span> } )
-    );
-
-    <span class="comment">// remove a cookie</span>
-    Cookie.<span class="keyword">set</span>( <span class="string">'__saber_remove'</span>, <span class="string">'xx'</span> );
-    <span class="keyword">var</span> beforeVal = Cookie.<span class="keyword">get</span>( <span class="string">'__saber_remove'</span> );
-    Cookie.remove( <span class="string">'__saber_remove'</span> );
-    <span class="keyword">var</span> afterVal = Cookie.<span class="keyword">get</span>( <span class="string">'__saber_remove'</span> );
-    console.info( <span class="string">'before: %s , after: %s'</span>, beforeVal, afterVal );
-});
-</code></pre><h2 id="API">API</h2>
-<h3 id="Cookie-get(_name_[,_options]_)">Cookie.get( name [, options] )</h3>
-<p>获取键名为<code>name</code>的cookie值, 若cookie不存在或<code>name</code>为空，则返回<code>null</code></p>
-<h5 id="参数">参数</h5>
-<p><code>name</code> {string} cookie的键名</p>
-<p><code>options</code> {Object} 参数可选，支持的配置项:</p>
 <ul>
-<li><code>raw</code> {boolean} 是否强制解码(<code>decodeURIComponent</code>)</li>
+<li><strong>storageId</strong> <code>{String}</code>: 存储命名空间，默认存储在 <code>_SABER</code> 命名空间下</li>
+<li><strong>memoryCache</strong> <code>{Boolean}</code>: 可选项。是否开启内存级别缓存，即只存储至页面变量中，而不持久化数据。默认 <code>false</code>。</li>
 </ul>
-<h5 id="示例">示例</h5>
-<pre><code><span class="comment">// 获取键名为 mycookie 的cookie值</span>
-Cookie.<span class="keyword">get</span>( <span class="string">'mycookie'</span> );
-
-<span class="comment">// 获取键名为 rawcookie 的未解码的cookie存储值</span>
-Cookie.<span class="keyword">get</span>( <span class="string">'rawcookie'</span>, { raw: <span class="keyword">true</span> } );
-</code></pre><h3 id="Cookie-set(_name,_value_[,_options]_)">Cookie.set( name, value [, options] )</h3>
-<p>设置键名为<code>name</code>,值为<code>value</code>的新cookie</p>
-<h5 id="参数-1">参数</h5>
-<p><code>name</code> {string} cookie的键名</p>
-<p><code>value</code> {string} cookie的原始值</p>
-<p><code>options</code> {Object} 参数可选，支持的配置项:</p>
+<h3 id="Events">Events</h3>
+<h4 id="Storage-Event-OUT_OF_LIMIT"><em>Storage.Event.OUT_OF_LIMIT</em></h4>
+<p>通过.on(eventName, callback)方法监听事件。</p>
+<p>存储空间溢出事件。当本次存储超出时，会派发该事件。需要提前监听。</p>
+<p>常见浏览器支持空间为5M左右。</p>
+<h3 id="Methods">Methods</h3>
+<h4 id="isSupport()">isSupport()</h4>
+<p>判断是否支持本地存储</p>
 <ul>
-<li><code>expires</code> {Date|Number} cookie的过期时间, 为数字时单位为<code>毫秒</code></li>
-<li><code>domain</code> {string} cookie的域名</li>
-<li><code>path</code> {string} cookie路径</li>
-<li><code>secure</code> {boolean} cookie是否安全传输</li>
-<li><code>raw</code> {boolean} 是否强制解码(<code>decodeURIComponent</code>), 为<code>true</code>时参数<code>value</code>会以未编码的原始值存储</li>
+<li><em>return</em> <code>{Boolean}</code> 是否支持</li>
 </ul>
-<h5 id="示例-1">示例</h5>
-<pre><code><span class="comment">// 默认(session级)的新cookie</span>
-Cookie.<span class="keyword">set</span>( <span class="string">'test1'</span>, <span class="string">'session cookie'</span> );
-
-<span class="comment">// 设置了有1天效期的新cookie</span>
-Cookie.<span class="keyword">set</span>( <span class="string">'test2'</span>, <span class="string">'baidu'</span>, {
-    expires: <span class="number">1</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>
-});
-
-<span class="comment">// 设置了路径的新cookie</span>
-Cookie.<span class="keyword">set</span>( <span class="string">'test3'</span>, <span class="string">'baidu'</span>, {    path: <span class="string">'/'</span> });
-
-<span class="comment">// 设置了域名的新cookie</span>
-Cookie.<span class="keyword">set</span>( <span class="string">'test4'</span>, <span class="string">'baidu'</span>, { domain: <span class="string">'baidu.com'</span> });
-
-<span class="comment">// 设置了安全传输的新cookie</span>
-Cookie.<span class="keyword">set</span>( <span class="string">'test5'</span>, <span class="string">'baidu'</span>, { secure: <span class="keyword">true</span> });
-
-<span class="comment">// 禁用自动编码(encodeURIComponent)的cookie</span>
-Cookie.<span class="keyword">set</span>( <span class="string">'test6'</span>, <span class="string">'百度一下，你就知道~~'</span>, { raw: <span class="keyword">true</span> } );
-</code></pre><h3 id="Cookie-remove(_name_[,_options]_)">Cookie.remove( name [, options] )</h3>
-<p>删除键名为<code>name</code>的cookie</p>
-<h5 id="参数-2">参数</h5>
-<p><code>name</code> {string} cookie的键名</p>
-<p><code>options</code> {Object} 参数可选，支持的配置项:</p>
+<h4 id="setItem(key,_val)">setItem(key, val)</h4>
+<p>存入数据</p>
 <ul>
-<li><code>domain</code> {string} cookie的域名</li>
-<li><code>path</code> {string} cookie路径</li>
-<li><code>secure</code> {boolean} cookie是否安全传输</li>
+<li><strong>key</strong> <code>{String}</code> 存储键名</li>
+<li><strong>val</strong> <code>{*}</code> 对应键名下的数据</li>
+<li><em>return</em> <code>{Boolean}</code> 是否存储成功</li>
 </ul>
-<h5 id="示例-2">示例</h5>
-<pre><code>// 删除键名为 mycookie 的cookie
-Cookie.remove( <span class="string">'mycookie'</span> );
+<h4 id="getItem(key)">getItem(key)</h4>
+<p>根据键名返回数据</p>
+<ul>
+<li><strong>key</strong> <code>{String}</code> 存储键名</li>
+<li><em>return</em> <code>{*}</code> 对应键名下的数据</li>
+</ul>
+<h4 id="removeItem(key)">removeItem(key)</h4>
+<p>移除某键名下的数据</p>
+<ul>
+<li><strong>key</strong> <code>{String}</code> 存储键名</li>
+<li><em>return</em> <code>{void}</code></li>
+</ul>
+<h4 id="clear()">clear()</h4>
+<p>清空已持久化的数据</p>
+<ul>
+<li><em>return</em> <code>{void}</code></li>
+</ul>
+<h3 id="key()">key()</h3>
+<p>获得持久化数据的key</p>
+<ul>
+<li><em>return</em> <code>{Array}</code> 键名数组</li>
+</ul>
+<h4 id="on(eventName:String,_callback:Function)">on(eventName:String, callback:Function)</h4>
+<p>事件绑定。目前只支持 <em>Storage.Event.OUT_OF_LIMIT</em> 事件。</p>
+<ul>
+<li><strong>eventName</strong> <code>{String}</code> 事件名 </li>
+<li><strong>callback</strong> <code>{Function}</code> 回调函数</li>
+<li><em>return</em> <code>{void}</code></li>
+</ul>
 
-<span class="regexp">//</span> 删除 <span class="string">`baidu.com`</span>域下，路径为 <span class="string">`/`</span> 的键名为 <span class="string">`othercookie`</span> 的cookie
-Cookie.remove( <span class="string">'othercookie'</span>, { domain: <span class="string">'baidu.com'</span>, path: <span class="string">'/'</span> } );
-</code></pre><h2 id="Test">Test</h2>
-<p>使用 <code>edp webservice</code> 启动 Web Server</p>
-<pre><code>edp <span class="keyword">ws</span> start
-</code></pre><p>访问</p>
-<pre><code>http:<span class="comment">//localhost:8848/test/runner.html</span>
-</code></pre>
 </article>
 
     
