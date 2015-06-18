@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2015-2-4 1:48:34
+date: 2015-5-18 4:11:12
 title: Type
 repo: saber-lang
 ref: 2.0.0-alpha.1

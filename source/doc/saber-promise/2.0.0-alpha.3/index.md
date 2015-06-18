@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2015-2-23 2:2:3
+date: 2015-5-18 4:11:32
 title: saber-promise
 repo: saber-promise
 ref: 2.0.0-alpha.3

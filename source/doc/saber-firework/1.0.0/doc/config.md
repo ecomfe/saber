@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-3 8:31:18
+date: 2015-5-18 4:10:43
 title: 全局配置信息
 repo: saber-firework
 ref: 1.0.0

@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2015-3-16 23:32:59
+date: 2015-5-18 4:10:2
 title: saber-emitter
 repo: saber-emitter
 ref: 2.0.0-beta.1

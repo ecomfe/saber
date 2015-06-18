@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-3 3:10:48
+date: 2015-5-18 4:11:42
 title: Resolver
 repo: saber-promise
 ref: 1.0.0

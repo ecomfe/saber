@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-3 7:47:17
+date: 2015-5-18 4:13:23
 title: Plugin
 repo: saber-widget
 ref: 1.0.0

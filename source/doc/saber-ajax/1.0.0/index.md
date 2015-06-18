@@ -1,6 +1,6 @@
 layout: doc
 comments: false
-date: 2014-10-3 3:33:30
+date: 2015-5-18 4:9:53
 title: saber-ajax
 repo: saber-ajax
 ref: 1.0.0
